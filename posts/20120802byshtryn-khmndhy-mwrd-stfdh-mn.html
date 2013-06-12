@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <title>بیشترین کامندهای مورد استفاده من</title>
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="../assets/css/style.css" title="blog.txt">
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="../assets/css/2c-r.css" title="blog.txt">
+    <link rel="stylesheet" type="text/css" media="print" href="../assets/css/print.css" title="blog.txt">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS (fa)" href="../rss.xml">
+    
+    
+</head>
+<body dir="rtl">
+    <script type="text/javascript">
+        var addthis_config = { 'ui_language': 'fa' };
+    </script>
+
+<div id="wrapper">
+    <div id="container">
+        <div id="content">
+            <div id="header">
+                <h1 id="blog-title">
+                    <a href="http://alinuxgeek.github.com" title="نوشته‌های یک گیک"> نوشته‌های یک گیک</a>
+                </h1>
+		<br><hr>
+                
+                
+            </div>
+        <div class="hfeed">
+            <!--Body content-->
+            
+    <div id="post-20120802byshtryn-khmndhy-mwrd-stfdh-mn" class="post">
+        <h2 class="entry-title"><a href="#">بیشترین کامندهای مورد استفاده من</a>
+        <div class="entry-content">
+            <p></p><p style="text-align:justify;">امروز یه چیزی به ذهنم رسید. اینکه ببینم از۵۰۰ تا کامند توی هیستوری، کدومشون استفاده بیشتری داشتن؟</p>
+<p style="text-align:justify;">خوب، اول تمام تاریخچه رو میریزم به یه فایل:</p>
+<p style="text-align:justify;" dir="ltr">history &gt; history</p>
+
+<p style="text-align:justify;">بعد این کامند(ها) رو میزنم:</p>
+
+<p style="text-align:justify;" dir="ltr">afterpc@apcubuntu 05:10:16 PM  ~ $ cat history | awk '{ print $2 }' | sort | uniq -c | tr -s ' ' | sed "s/ //" | grep [0-9][0-9]' ' | sort | tac</p>
+
+<p style="text-align:justify;">اول بگم چی میگذره اینجا. cat، فایل history رو میخونه و میده به awk. اونم دومین کلمه که میشه همون کامندمون. بعد sort به ترتیب حروف الفبا مرتب میکنه و اونیکی میگه که هر کلمه چند بار تکرار شده. بعد tr همه اسپیس‌ها که دو بار یا بیشتر کنار هم اومدن پاک میکنه و فقط یکی میذاره و اون sed میاد اون یدونه رو هم پاک میکنه. بعد با grep دورقمی‌ها رو جدا میکنم و دوباره با sort مرتب میکنم و با tac برعکس میکنم که بیشترها بالا باشن.
+
+و نتیجه:</p>
+
+<p style="text-align:justify;" dir="ltr">79 c
+
+76 ls
+
+38 sudo
+
+23 rm
+
+21 downloader
+
+18 emacs
+
+18 cat
+
+14 echo
+
+11 man</p>
+
+<p style="text-align:justify;">واو! جالبه! c که درواقع یه alias (اسم مستعار) clear هست، بیشتر از همه استفاده شده! ls هم با سه تا تفاوت! بعدی sudo هست. بعدش rm! زیادی پاک میکنم انگار! اوه! اسکریپتی که با اون دانلودام رو شروع میکنم رتبه پنجمه! بعدش ایمکس و cat و echo. بین پونصد کامند، یازده‌تاش هم man هست. زیادی دوست دارم یاد بگیرم یا فقط سرسری یه نگاه میندازم میرم؟ :)</p>
+
+<p></p>
+        </div>
+        <div class="archive-meta">
+            ارسال شده: 2012-08-02 15:57:16<span class="meta-sep">|</span>
+            <span class="meta-sep">|</span>
+            <a href="20120802byshtryn-khmndhy-mwrd-stfdh-mn.txt">reSt</a>
+            <span class="meta-sep">|</span>
+                    <a href="../categories/chr-shq-lynwkhs-hstm.html"><span class="badge badge-info">چرا عاشق لینوکس هستم</span></a>
+                    <a href="../categories/gnwlynwkhs.html"><span class="badge badge-info">گنو/لینوکس</span></a>
+                    <a href="../categories/skhrypth.html"><span class="badge badge-info">اسکریپت‌ها</span></a>
+            <span class="entry-tags">
+            </span>
+        </div>
+    </h2></div>
+        <!-- Disqus comments !-->
+        <script type="text/javascript">
+            var disqus_url = 'http://alinuxgeek.github.com/posts/20120802byshtryn-khmndhy-mwrd-stfdh-mn.html';
+            var disqus_developer = 1;
+        </script>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript" src="http://disqus.com/forums/nikolademo/embed.js"></script>
+        <noscript><a href="http://disqus.com/forums/nikolademo/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- End of Disqus comments !-->
+
+            <!--End of body content-->
+        </div><!-- .hfeed -->
+    </div><!-- #content -->
+</div><!-- #container -->
+
+<div id="primary" class="sidebar" dir="ltr">
+    <ul>
+            <li><h3><a href="../archive.html">Archives</a></h3>
+            </li><li><h3><a href="../categories/index.html">Tags</a></h3>
+            </li><li><h3><a href="../rss.xml">RSS</a></h3>
+        </li><li>
+        <!-- social buttons -->
+        </li><li>
+            <div class="addthis_toolbox addthis_default_style" style="margin-bottom: 12px;">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+            </div>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+        <!-- End of social buttons -->
+        </li><li>
+    </li></ul>
+</div><!-- #primary .sidebar -->
+
+<div id="footer" dir="ltr">
+    <span id="theme-link"><a href="http://www.plaintxt.org/themes/blogtxt/" title="&lt;?php _e('blog.txt theme for WordPress', 'blogtxt' ) ?&gt;" rel="follow designer">blog.txt</a> <?php _e('theme by', 'blogtxt') ?> <span class="vcard"><a class="url fn n" href="http://scottwallick.com/" title="scottwallick.com" rel="follow designer"><span class="given-name">Scott</span><span class="additional-name"> Allan</span><span class="family-name"> Wallick</span></a></span></span>
+    <small>Contents © 2013         <a href="mailto:vapaapoika@gmail.com">علیرضا</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a></small><p>
+</p></div><!-- #footer -->
+
+</div><!-- #wrapper -->
+    
+<!-- end transmission -->
+</body></html>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>نوشته‌های یک گیک</title><link>http://alinuxgeek.github.com</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Wed, 12 Jun 2013 23:51:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>شرتکات فوکوس روی پنجره ایمکس</title><link>http://alinuxgeek.github.com/posts/20130529shrtkht-bl-fwkhws-rwy-pnjrh-ymkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب، امروز &lt;a href="/posts/emacs-as-a-terminal-emulator.html"&gt;پست شاهین&lt;/a&gt; در مورد استفاده از ایمکس به عنوان ترمینال رو دیدم. یه مدت خودم هم این فکر رو تو سرم داشتم، ولی تنبلی نمیذاره کاری بکنیم ;)‏&lt;/p&gt;
+&lt;p&gt;خوب، این پست رو میخونم. همه جا تا multi-term خوب و خوش پیش میره. ولی وقتی به تنظیمات i3 میرسم، یه چیز جالب یادم میفته: دسکتاپ من i3 نیست! چاره چیه؟&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;باید پنجره ایمکس رو طوری بکنم که با یه شرتکات بیاد و بره. اوپن باکس به هیچ وجه تو مدیریت پنجره‌ها از طریق خط فرمان خوب نیست. پس باید یه راه دیگه پیدا کنم. با یه سرچ، به یه ابزار داخلی X میرسم: xdotool. کمی تو راهنماش میچرخم و چیزهایی رو که لازم هستن پیدا میکنم. چیزایی مثل مینیمایز کردن، بالا آوردن و گرفتن آی‌دی پنجره. خوب، فقط مونده این‌ها رو ترکیب بکنیم. یه اسکریپت کوتاه می‌نویسیم:&lt;/p&gt;
+&lt;p dir="ltr"&gt;‎#! /bin/bash&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;id="$(xdotool search --name --limit 1 emacs@$HOST)"‎&lt;br&gt;
+
+active="$(xdotool getactivewindow)"‎&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;if [ "$id" = "" ]; then&lt;br&gt;
+
+zenity --error --title "Error" --text "No emacs is running\!"‎&lt;br&gt;
+
+exit 1&lt;br&gt;
+
+fi&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;if [ $id != "$active" ]; then&lt;br&gt;
+
+xdotool windowmap $id&lt;br&gt;
+
+xdotool windowfocus $id&lt;br&gt;
+
+else&lt;br&gt;
+
+xdotool windowminimize $id&lt;br&gt;
+
+fi&lt;/p&gt;
+
+&lt;p&gt;اول بگم که اگه بخواین این رو کپی کنین، یه سری کاراکتر برای درست نشون دادن این کد گذاشتم. پس اگه بخواین کپیش کنین، اول چک کنین ببینین کاراکتر اضافی دارین یا نه.&lt;br&gt;
+
+خوب، میشه گفت هرکسی با یه نگاه میتونه بگه این اسکریپت چیکار میکنه. ولی به هر حال توضیح میدم. اولین سطر که میگیم با بش اجرا کن. بعد، آی‌دی پنجره‌ای رو که اسمش emacs@HOSTNAME هست، میگیرم (HOSTNAME همون اسم کامپیوتره منه) که همون پنجره ایمکسه و میذارم تو متغیر id. بعد، آی‌دی پنجره فعال رو میگیرم و اونو هم میندازم تو متغیر active. حالا چک میکنم ببینم اصلا پنجره ایمکسی هست یا نه. اگه نباشه با zenity یه ارور میدم و میزنم بیرون. حالا یه if دیگه میذارم که ببینم پنجره فعال همون ایمکسه یا نه. اگه باشه، مینیمایزش میکنم و اگه نباشه، میارمش بالا و روش فوکوس میکنم.&lt;br&gt;
+
+خوب، حالا این رو تو یه فایل میریزم و یه شرتکات دلخواه براش تعیین میکنم و تمام.&lt;br&gt;
+
+ولی من شخصا زیاد از ترمینال ایمکس خوشم نیومد. بعضی شرتکات‌ها رو ساپورت نمیکنه (که نباید هم بکنه. به هر حال شرتکات‌های خودشه دیگه!) و بعضی کارهای دیگه هم نمیشن.&lt;br&gt;
+
+ولی به هر حال این کد رو نگه میدارم تا شاید یه روز برای برنامه دیگه‌ای، مثل GoldenDict، ازش استفاده بکنم ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>چرا عاشق لینوکس هستم</category><category>گنو/لینوکس</category><category>اوپن باکس</category><category>ایمکس</category><category>ایمکس</category><category>اسکریپت‌ها</category><guid>http://alinuxgeek.github.com/posts/20130529shrtkht-bl-fwkhws-rwy-pnjrh-ymkhs.html</guid><pubDate>Wed, 29 May 2013 14:40:18 GMT</pubDate></item><item><title>یه گیگ‌بازی کوچولو: دانلود ده تا فایل پی‌دی‌اف از «ستاد سلام »</title><link>http://alinuxgeek.github.com/posts/20130524yh-gygbzy-khwchwlw-dnlwd-dh-t-fyl-p.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;دیروز، کسی از گوگل پلاس، که یادم نیست کی بود، &lt;a href="/paper-tools/trakt-nevisi"&gt;این لینک رو از ستاد سلام&lt;/a&gt; شیر کرده بود. درمورد چیزایی مثل حقوق زنان هست. می‌خواستم تمام فایل‌های پی‌دی‌اف رو دانلود بکنم، ولی در شأن یه گیک نیست که تک به تک بشینه فایل‌ها رو دانلود بکنه ;) پس یکی دو خط کد می‌زنیم.&lt;br&gt;
+اول، باید یه فایل اچ‌تی‌ام‌ال از اون صفحه ستاد سلام بگیرم:&lt;/p&gt;
+&lt;p dir="ltr"&gt;wget "&lt;a href="/paper-tools/trakt-nevisi"&gt;http://www.setadsalam.net/paper-tools/trakt-nevisi&lt;/a&gt;" -O trakt_nevisi.html&lt;/p&gt;
+
+&lt;p&gt;حالا، باید لینک‌ها رو از فایل جدا کنیم و بذاریم تو یه فایل دیگه:&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;cat trakt_nevisi.html | grep -Po 'href="(.*?)\.pdf"' | cut -d\" -f2 | uniq | sed "s|^|&lt;a href="http://www.setadsalam.net"&gt;http://www.setadsalam.net&lt;/a&gt;|g" | tee URLs&lt;/p&gt;
+
+&lt;p&gt;خلاصه این کد اینه که اول با grep و cut آدرس‌ها رو از فایل جدا می‌کنیم، بعد چون هر آدرس یه بار هم تکرار شده، تکراری‌ها رو حذف می‌کنیم و بعد، به خاطر این که اولشون اسلش (/) هست و نه آدرس سایت، آدرس ستاد سلام رو هم به اولش اضافه می‌کنیم. بعدش هم با tee آدرس‌ها رو تو فایل URLs میذاریم.&lt;br&gt;
+
+خوب، حالا فقط دانلودشون مونده:&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;wget -i URLs&lt;/p&gt;
+
+&lt;p&gt;با آپشن ‎-i به wget میفهمونیم که باید آدرس‌ها رو از فایل URLs بگیره.&lt;br&gt;
+
+حالا برای اطمینان، تعداد فایل‌ها رو بررسی می‌کنیم:&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;‎ $ ls *.pdf | wc -l&lt;br&gt;
+
+‎10&lt;/p&gt;
+
+&lt;p&gt;خوب، ده تا کلیک صرفه‌جویی شد ;)&lt;/p&gt;
+
+&lt;p&gt;پی‌نوشت: این پست و &lt;a href="/2013/05/23/%D8%AF%D9%88%D8%B1%D9%87-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AE%D9%88%D8%A7%D9%86%D9%86%D8%AF%D9%87%E2%80%8C%D9%87%D8%A7-%D9%88-%D9%BE/"&gt;پست قبلی&lt;/a&gt; رو با ایمیل به وردپرس فرستادم. واسه همین تا وقتی که بتونم سد فیلترینگ رو رد بکنم، این دو مطلب و شاید مطالب بعدی رو به دسته خاصی نمی‌تونم اضافه بکنم.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>چرا عاشق لینوکس هستم</category><category>چرا عاشق لینوکس هستم</category><category>گنو/لینوکس</category><category>اسکریپت‌ها</category><category>ستاد سلام</category><guid>http://alinuxgeek.github.com/posts/20130524yh-gygbzy-khwchwlw-dnlwd-dh-t-fyl-p.html</guid><pubDate>Fri, 24 May 2013 06:59:43 GMT</pubDate></item><item><title>دوره جدید درسنامه برای خواننده‌ها و پادکسترها: استودیوی خانگ ی ضبط صدا</title><link>http://alinuxgeek.github.com/posts/20130523dwrh-jdyd-drsnmh-bry-khwnndhh-w-p.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;افراد زیادی هستن که دوست دارن یه پادکست داشته باشن. ولی بعضی مشکلات دارن. مثلا، میترسن مردم خوششون نیاد یا صداشون ضایع باشه یا میخوان تو دنیای مجازی صداشون پخش نشه. ولی، برای کسایی که اینجور مشکلات رو ندارن، یه مشکل دیگه هم هست: چطور صدا رو با کیفیت خوب و مناسب برای یک پادکست میشه ضبط کرد؟&lt;/p&gt;
+&lt;p&gt;امروز &lt;a href="/"&gt;درسنامه&lt;/a&gt;، دوره جدیدی به اسم «استودیوی خانگی ضبط صدا» راه‌اندازی کرده که به این سوال یه جواب کامل میده. من قرار نیست تو این دوره شرکت بکنم، چون زیاد با ضبط صدا سر و کار ندارم. ولی اگه شما به ضبط صدا علاقه دارین، میتونین &lt;a href="/blog/175"&gt;تو این دوره درسنامه شرکت بکنین&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description><category>پادکست</category><category>خواننده</category><category>درسنامه</category><category>ضبط</category><category>عمومی</category><guid>http://alinuxgeek.github.com/posts/20130523dwrh-jdyd-drsnmh-bry-khwnndhh-w-p.html</guid><pubDate>Thu, 23 May 2013 11:05:26 GMT</pubDate></item><item><title>زندان برای اشتراک‌گذاری</title><link>http://alinuxgeek.github.com/posts/20130515zndn-bry-shtrkhgdhry.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;span style="line-height:1.6;"&gt;سوئد کشوری هست که جزء آزادترین‌ها شناخته میشه و &lt;a title="The Pirate Bay" href="/posts/thepiratebay.sx" target="_blank"&gt;پایرت بی&lt;/a&gt; هم از اونجا متولد شده. ولی در حین حال، اونجا عملکردهای ضد پایرت زیادی دیده میشه.&lt;/span&gt;&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;تو سال ۲۰۱۰، پلیس فردی رو تو خونش در حال اشتراک‌گذاری ۵۷ تا فیلم با uTorrent دستگیر کرده. قرار شده ۶۰۰۰ کرون (۹۲۰ دلار) جریمه بده که بعد به ۸۰۰۰ کرون (۱۲۰۰ دلار) افزایش پیدا کرده. ولی این هم پلیس رو راضی نکرده و حالا &lt;a title="Sweden Wants to Jail Pirate Bay User to Strengthen Anti-Piracy Enforcement" href="http://torrentfreak.com/sweden-wants-to-jail-file-sharer-to-strengthen-anti-piracy-enforcement-130514/" target="_blank"&gt;به دادگاه عالی گزارش داده که شاید بتونه اون رو به زندان بکشونه&lt;/a&gt;. اگز بتونن این مرد رو به زندان بندازن، در آینده می‌تونن بقیه کسایی رو که فیلم‌ها و فایل‌های کپی‌رایت‌دار دیگه‌ای رو به اشتراک میذارن، به همین سرنوشت دچار کنه.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;بله، اشتراک‌گذاری فایل‌هایی که به خاطرشون زحمت کشیده شده و تجاری هستن، کار درستی نیست. ولی اونقدر جرم بزرگی نیست که کسی رو به خاطرش به زندان بندازن. جرم کسی که شیشه مغازه رو میشکونه و یه تلویزیون میدزده هیچوقت با جرم کسی که یک (یا چند تا) فیلم رو آپلود می‌کنه قابل مقایسه نیست و نمیشه اون فرد رو به زندان انداخت.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>thepiratebay</category><category>torrent</category><category>پایرت بی</category><category>آزادی</category><category>تورنت</category><guid>http://alinuxgeek.github.com/posts/20130515zndn-bry-shtrkhgdhry.html</guid><pubDate>Wed, 15 May 2013 12:17:41 GMT</pubDate></item><item><title>نگهبانان</title><link>http://alinuxgeek.github.com/posts/20130410the_guardians.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;a title="The Guardians" href="http://www.goodreads.com/book/show/1196894.The_Guardians" target="_blank"&gt;کتاب نگهبانان&lt;/a&gt;، اثر جان کریستوفر، کتاب نه چندان مشهور ولی زیبایی هست. توی گودریدز، بیشتر اون رو به عنوان کتاب علمی تخیلی انتخاب کردن که فکر میکنم دلیلش نوشته شدن کتاب توسط جان کریستوفره. ولی از نظر من، بیشتر یک پاد‌آرمان‌شهر و از بعضی جهات شبیه کتاب «دنیای قشنگ نو» هست. خلاصه‌ای از این کتاب:&lt;/p&gt;
+&lt;blockquote&gt;
+
+&lt;p style="text-align:justify;"&gt;این رمان، انگلستان را در سال ۲۰۵۲ نشان می‌دهد که به دو جامعه متفاوت تبدیل شده است: اولی، جامعه‌ای مدرن به نام «شهر» و دومی جامعه‌ای اشرافی، به اسم «شهرستان». شهر، محلی پرجمعیت و با تکنولوژی‌های جدید است، در حالی که شهرستان، جاییست با خانه‌های بزرگ و اربابی  با محیطی متعلق به قرن نوزدهم. داستان، زندگی فردی شهری به نام راب را دنبال می‌کند که زندگی در هر دو طرف را تجربه، حقیقت‌ها را برای خود افشا و محل مناسب را انتخاب می‌کند.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p style="text-align:justify;"&gt;با این که خیلی‌ها از این کتاب زیاد خوششون نیومده (یا حداقل نه اونقدر که مشهور بشه)، من اون رو به عنوان یکی از بهترین کتاب‌های جان کریستوفر میدونم.
+
+شاید این کتاب مثل «۱۹۸۴»، «دنیای قشنگ نو» یا «قلعه حیوانات» زیاد روی پاد‌آرمان‌شهر بودن تمرکز نکرده، ولی در پس‌زمینه، خیلی خوب به این هدف رسیده.
+
+پیشنهاد میکنم کسایی که به این کتاب دسترسی دارن، حتما بخوننش.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پی‌نوشت: حالا که حرف از کتاب شد، ویرایش دوم «دموکراسی یا دموقراضه» رو که دوستان پلاسی به صورت پی‌دی‌اف (به خاطر توقف چاپش)، &lt;a title="دموکراسی یا دموقراضه" href="http://www.mediafire.com/?v0y4fh99551yso4" target="_blank"&gt;منتشر کردن&lt;/a&gt;، به هیچ وجه از دست ندین :)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>نگهبانان</category><category>کتاب</category><category>کتاب</category><category>دموکراسی یا دموقراضه</category><guid>http://alinuxgeek.github.com/posts/20130410the_guardians.html</guid><pubDate>Wed, 10 Apr 2013 16:02:37 GMT</pubDate></item><item><title>اینجا</title><link>http://alinuxgeek.github.com/posts/20130403ynj.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;هر از گاهی فکر میکنم، زندگی تو ایران چقدر میتونه بی‌روح باشه. جایی که همه چیز رو دولت میگه. جایی که به دخترا یاد دادن نخندن، به پسرا گفتن ازدواج زندگیت رو داغون میکنه، ولی تنها راه لذت بردن ازشه. جایی که دولت میگه نباید با کسی که دوستش داریم بریم بیرون. جایی که همیشه باید دنبال پول باشی، مثل خر درس بخونی، که شاید زندگیت کمی بهتر از بقیه باشه. جایی که همه چی پوله، جایی که خوشبخت کسیه که اون جا نباشه. تو این کشور، همه افسرده هستن. همه فکر میکنن بدبخت‌تر از بقین، و حقم دارن. اینجا، به همه یاد دادن ساکت باشن، اعتراض نکنن. این جا لذت بردن حرامه. کسی نمیتونه خوشبخت باشه، چون برای رفتن به بهشت باید اینجا رو جهنم به حساب آورد و بدبخت موند. اینجا آزادی نیست، خوشبختی نیست، لذت نیست، زندگی نیست، هیچ چیز نیست غیر از رفتن. شاد موندن خیلی سخته، خیلی. از بچه دو ساله تا پیرمرد هشتاد ساله، همه بدبختن اینجا. حرفا همه شعارن. کسی کاری نمیکنه. اینجا پولدار و فقیر فرقی نداره، همه بدبختن. همه.&lt;/p&gt;</description><category>مردم</category><category>آزادی</category><category>آزادی</category><category>ایران</category><category>عمومی</category><guid>http://alinuxgeek.github.com/posts/20130403ynj.html</guid><pubDate>Wed, 03 Apr 2013 03:27:56 GMT</pubDate></item><item><title>زیبارویان چند اینچی</title><link>http://alinuxgeek.github.com/posts/20130315zybrwyn-chnd-ynchy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p dir="RTL" align="JUSTIFY"&gt;&lt;span style="font-family:'B Nazanin';"&gt;آن‌ها همه جا را گرفته بودند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;به من چشمک می‌زدند و تهدیدم می‌کردند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;تهدیدم می‌کردند که اگر کار اشتباهی انجام بدهم، روزها سوژه مردم خواهم بود&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;من همیشه زیر چشم آنان بودم، هیچ‌گاه چیزی شخصی نمی‌توانستم داشته باشم، زیرا آن‌ها، بر همه چیز آگاه بودند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;آن‌ها زندگی مرا هدایت می‌کردند و بدون آن‌که من بفهمم، بر من امر می‌کردند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;آه، چه سخت است زندگی زیر دست چند اینچی‌ها&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;قدشان از پاهای من کوتاه‌تر بودند، ولی همه چیز زیر سلطه آنان بود&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;حکومت از آن‌ها می‌ترسید، فقرا آرزوی برده بودنش را داشتند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;به دنیا حکومت می‌کردند و در دل همه جای گرفته بودند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;ولی هیچ‌کس نمیفهمید که دارد آزادی خود را، زندگی خود را به دست یک چند اینچی می‌گذارد&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;سخت است بدانی کسی زندگی‌ات را نابود می‌کند، و در عین حال دوستش داشته باشی&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;ما برده آنان شده‌ایم&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;ذره ذره به دست آن‌ها افتاده‌ایم و فکر می‌کنیم خود اربابشان هستیم&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;آنان حاکمانی زیرزمینی هستند که در همه جا حضور دارند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;حاکمانی کوچک، ولی قدرتمند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;بر همه چیز آگاهی دارند، و روز به روز قدرتمندتر می‌شوند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;روزی فرا می‌رسد که قدرت خود را بر همه‌گان آشکار می‌کنند و ما، همه پشیمان از عشقمان خواهیم شد&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;پشیمان از دوست داشتن کسی که ما را به رایگان خریده و برده آزاده خود کرده بود&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;آری، ما هر جا می‌توانیم برویم&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;ما آزادیم که راه برویم و زندگی کنیم، ما آزادیم هرچه می‌خواهیم بخوریم و بنوشیم، ولی نمی‌توانیم چیزی را پنهان کنیم&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;همه چیز زیر چشمان آن‌هاست، چشمان چند پیکسلی آن زیبارویان چند اینچی&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;ما بدون آن‌که بفهمیم، خود را تسلیم آن‌ها میکنیم و عاشقشان می‌شویم&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;ما عاشق دشمنان آینده‌مان هستیم، و خواهیم بود&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;آن‌ها چنان قدرتی دارند که مردم را دشمن یا دوست یک‌دیگر کنند و یا جنگی چند ساله به راه بیندازند&lt;/span&gt;. &lt;span style="font-family:'B Nazanin';"&gt;آنان هنوز خاموشند، ولی همیشه خاموش نخواهند ماند&lt;/span&gt;.&lt;/p&gt;
+&lt;p dir="RTL" align="JUSTIFY"&gt;&lt;i&gt;بعد از خوندن &lt;a title="دریای شاهدهای جیبی" href="http://1pezeshk.com/archives/2013/03/a-starry-sea-of-cameras-at-the-unveiling-of-pope-francis.html" target="_blank"&gt;این مطلب یک پزشک&lt;/a&gt;، شروع به نوشتن این پست کردم&lt;/i&gt;&lt;/p&gt;</description><category>چند اینچی ها</category><category>گجت</category><category>عمومی</category><guid>http://alinuxgeek.github.com/posts/20130315zybrwyn-chnd-ynchy.html</guid><pubDate>Fri, 15 Mar 2013 08:08:09 GMT</pubDate></item><item><title>چرا کتاب‌ها همیشه کتاب خواهند ماند؟</title><link>http://alinuxgeek.github.com/posts/20130314chr-khtbh-hmymshh-khtb-khwhnd-mnd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;الان، بازار تبلت‌ها و ای‌بوک‌ریدرها داغ شده. خیلی‌ها هستن که فقط برای کتاب خوندن میرن تبلت میخرن. ولی به نظر من، تا مدت طولانی کتاب‌های کاغذی همینطور میمونن. شاید برای کشوری مثل کشور ما که کتاب‌های کاغذی سانسور شده یا گرون هستن، سرعت پیشرفت ای‌بوک‌ها[ی رایگان] بیشتر از بقیه کشورهاست. ولی در کل، تو دنیا هنوز خیلی‌ها بیشتر به کتاب‌های کاغذی علاقه دارن.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://alinuxgeek.files.wordpress.com/2013/03/goodreads_poll_1.png"&gt;&lt;img class="size-full wp-image-1075" alt="نظرسنجی گودریدز درمورد استفاده از تبلت برای خواندن کتاب" src="http://alinuxgeek.files.wordpress.com/2013/03/goodreads_poll_1.png" width="262" height="186"&gt;&lt;/a&gt; نظرسنجی گودریدز درمورد استفاده از تبلت برای خواندن کتاب&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;لذت کتاب کاغذی، خیلی بیشتر از یه کتاب الکترونیکی هست. کتاب کاغذی، حس کتاب واقعی رو میده، نه یه کتاب مصنوعی. کتاب کاغذی آدم رو ترغیب میکنه به خوندن. ولی کتاب الکترونیکی، چیزی هست که گوشه هاردمون میمونه تا ما به فکرش بیفتیم و بخونیم. درسته که کتاب کاغذی هزینش بیشتره و جای بیشتری میگیره، ولی اگه بتونیم این دو مشکل (به خصوص اولی) رو برطرف بکنیم، کتاب کاغذی بهترین گزینه هست. حس برگردوندن کاغذ، خیلی واقعی‌تر از اسکرول کردن یه پی‌دی‌اف هست.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;من تا وقتی که ای‌بوک‌ریدرها، تبلت‌ها، گوشی‌ها و ... لذت کتاب خوندن رو بهم نمیدن، تا وقتی که مجبور نباشم، ازشون استفاده نمیکنم. ولی حیف که رفته رفته داریم میریم به سمت یه دنیای مصنوعی.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>کتاب</category><category>کتاب</category><category>کتاب الکترونیکی</category><category>ای بوک</category><category>ای بوک ریدر</category><category>تبلت</category><guid>http://alinuxgeek.github.com/posts/20130314chr-khtbh-hmymshh-khtb-khwhnd-mnd.html</guid><pubDate>Thu, 14 Mar 2013 16:46:14 GMT</pubDate></item><item><title>آرچ‌بوک ۲۰۱۳.۱ اومد</title><link>http://alinuxgeek.github.com/posts/20130310archbwkh-2013-1-wmd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بعد از گذشت یک سال از انتشار آرچ‌بوک قبلی، که مال موقعی بود که آرچ نصاب گرافیکی داشت، &lt;a title="کتاب آرچ‌بوک ۲۰۱۳.۱ منتشر شد!" href="http://emanlog.com/?p=324" target="_blank"&gt;آرچ‌بوک جدید&lt;/a&gt; با بازنویسی و زحمات &lt;a title="ایمان‌لاگ" href="http://emanlog.com/" target="_blank"&gt;ایمان&lt;/a&gt; منتشر شد. این کتاب، در واقع راهنمای شروع توزیع آرچ‌لینوکس هست که هم برای مبتدی‌ها و حتی بعضی وقت‌ها برای حرفه‌ای‌ها مناسبه. به علاوهٔ آموزش نصب آرچ، کلی اطلاعات دیگه هم داده که خیلیاشون ممکنه برای کاربرهای توزیع‌های دیگه هم مناسب باشه.
+&lt;/p&gt;&lt;p style="text-align:justify;"&gt;به نقل از وبلاگ ایمان:&lt;/p&gt;
+&lt;blockquote&gt;
+
+&lt;p style="text-align:justify;"&gt;این نسخه از کتاب در دو نسخه ارائه می‌شود. هر دو نسخه از نظر محتوا کاملا شبیه به یکدیگر می‌باشند و تنها تفاوت آن‌ها در صفحهٔ سپاس است.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;اما صفحهٔ سپاس چیست؟ دوستانی که از طریق لینکی که در ادامه قرار گرفته کتاب را به مبلغ ۳۸۰۰ تومان خریداری کنند نسخهٔ امضا شده که حاوی تشکر بنده به همراه امضاء در انتهای آن است را به منظور قدردانی دریافت خواهند کرد.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p style="text-align:justify;"&gt;با دادن مبلغ ۳۸۰۰ تومن، از ایمان و کتابش همایت خوبی می‌کنین و انگیزه نسخه بعدی آرچ‌بوک رو بیشتر می‌کنین.&lt;/p&gt;
+
+&lt;blockquote&gt;به هر حال حمایت شما از کتاب با خرید نسخهٔ امضا شده ما را در خلق آثاری از این دست در آینده یاری خواهد کرد.
+
+
+
+همچنین شما می‌توانید از طریق صفحهٔ زیر هدایای نقدی خود را برای ما ارسال کنید.
+
+
+
+&lt;a href="http://emanlog.com/?page_id=74"&gt;http://emanlog.com/?page_id=74&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;برای خرید کتاب (یا دانلود نسخه رایگانش)، به &lt;a title="کتاب آرچ ۲۰۱۳.۱ منتشر شد!" href="http://emanlog.com/?p=324" target="_blank"&gt;وبلاگ ایمان&lt;/a&gt; برین. بعد از خرید، کتاب به ایمیل شما ارسال میشه.&lt;/p&gt;</description><category>2013</category><category>کتاب</category><category>کتاب</category><category>گنو/لینوکس</category><category>۲۰۱۳</category><category>آرچ</category><category>آرچ بوک</category><guid>http://alinuxgeek.github.com/posts/20130310archbwkh-2013-1-wmd.html</guid><pubDate>Sun, 10 Mar 2013 13:11:18 GMT</pubDate></item><item><title>وبسایتی جدید برای آمارگیری توزیع‌های لینوکس و BSD</title><link>http://alinuxgeek.github.com/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;احتمالا قبلا با سایت DistroWatch مواجه شدین. این سایت علاوه بر ارائه اطلاعات درمورد توزیع‌های مختلف (لینوکس و BSD)، آماری هم براساس کلیک کاربرها روی لینک توزیع‌ها میده.
+امروز، داشتم فیدها رو چک میکردم که به یه مطلب از &lt;a title="LXer Linux News" href="http://lxer.com" target="_blank"&gt;LXer&lt;/a&gt; رسیدم. سایت جدیدی برای ارائه آمار توزیع‌های لینوکس و BSD به نام &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;این سایت براساس گفته خودش، به توزیع خودش امتیاز اضافی نمیده و حتی نگفته از چی استفاده میکنه. آمار هم براساس چهار چیز هست:&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;۱. تعداد نتایج چند موتور جستحوی مختلف
+
+۲. تعداد مقاله‌ها و اخبار درمورد توزیع
+
+۳. درصد استفاده از توزیع در سرورهایی که گزارش دادن
+
+۴. درصد استفاده از توزیع توسط کاربرهای دسکتاپی که گزارش دادن&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;از منابع مورد استفاده میشه به &lt;a title="Google" href="http://www.google.com" target="_blank"&gt;گوگل&lt;/a&gt;، &lt;a title="Bing" href="http://bing.com" target="_blank"&gt;بینگ&lt;/a&gt;، &lt;a title="Netcraft" href="http://news.netcraft.com/" target="_blank"&gt;Netcraft&lt;/a&gt; (یه وبلاگ که احتمالا مال صاحب این سایت هست) و آمار کاربران مراجعه‌کننده به خود &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt; اشاره کرد.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;با یه نگاه به آمار این سایت میشه تفاوتش رو با سایت DistroWatch دید. آمار DistroRank اینطور هستن:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. اوبونتو
+
+۲. مینت
+
+۳. ردهت
+
+۴. آرچ
+
+۵. دبین
+
+۶. فدورا
+
+۷. جنتو
+
+۸. PCLinuxOS
+
+۹. پاپی
+
+۱۰. Fruglware&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;درحالی که آمار DistroWatch میگه:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. مینت
+
+۲. مگیا
+
+۳. اوبونتو
+
+۴. فدورا
+
+۵. اوپن‌سوزه
+
+۶. دبین
+
+۷. PCLinuxOS
+
+۸. آرچ
+
+۹. Snowlinux
+
+۱۰. Zorin&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;تفاوت زیادی دارن با هم. برای مثال Frugalware براساس آمار DistroRank رتبه ۱۰ هست، درحالی که تو DistroWatch‏، ۵۹ هست.
+
+DistroRank اشتباهات کمی نداره. مثلا ما هممون میدونیم که مطمئنا Slackware از توزیع Frugalware خیلی پرطرفدارتره، ولی آمار این سایت اینطور نمیگه. به هر حال خوشحالم که سایت جدیدی برای ارائه آمار به وجود اومده.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>distrorank</category><category>DistroWatch</category><category>لینوکس</category><category>گنو/لینوکس</category><category>آمار</category><category>توزیع</category><guid>http://alinuxgeek.github.com/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</guid><pubDate>Fri, 15 Feb 2013 11:53:15 GMT</pubDate></item></channel></rss>

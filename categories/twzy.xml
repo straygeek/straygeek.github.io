@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>نوشته‌های یک گیک (توزیع)</title><link>http://alinuxgeek.github.com</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Wed, 12 Jun 2013 23:51:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>وبسایتی جدید برای آمارگیری توزیع‌های لینوکس و BSD</title><link>http://alinuxgeek.github.com/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;احتمالا قبلا با سایت DistroWatch مواجه شدین. این سایت علاوه بر ارائه اطلاعات درمورد توزیع‌های مختلف (لینوکس و BSD)، آماری هم براساس کلیک کاربرها روی لینک توزیع‌ها میده.
+امروز، داشتم فیدها رو چک میکردم که به یه مطلب از &lt;a title="LXer Linux News" href="http://lxer.com" target="_blank"&gt;LXer&lt;/a&gt; رسیدم. سایت جدیدی برای ارائه آمار توزیع‌های لینوکس و BSD به نام &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;این سایت براساس گفته خودش، به توزیع خودش امتیاز اضافی نمیده و حتی نگفته از چی استفاده میکنه. آمار هم براساس چهار چیز هست:&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;۱. تعداد نتایج چند موتور جستحوی مختلف
+
+۲. تعداد مقاله‌ها و اخبار درمورد توزیع
+
+۳. درصد استفاده از توزیع در سرورهایی که گزارش دادن
+
+۴. درصد استفاده از توزیع توسط کاربرهای دسکتاپی که گزارش دادن&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;از منابع مورد استفاده میشه به &lt;a title="Google" href="http://www.google.com" target="_blank"&gt;گوگل&lt;/a&gt;، &lt;a title="Bing" href="http://bing.com" target="_blank"&gt;بینگ&lt;/a&gt;، &lt;a title="Netcraft" href="http://news.netcraft.com/" target="_blank"&gt;Netcraft&lt;/a&gt; (یه وبلاگ که احتمالا مال صاحب این سایت هست) و آمار کاربران مراجعه‌کننده به خود &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt; اشاره کرد.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;با یه نگاه به آمار این سایت میشه تفاوتش رو با سایت DistroWatch دید. آمار DistroRank اینطور هستن:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. اوبونتو
+
+۲. مینت
+
+۳. ردهت
+
+۴. آرچ
+
+۵. دبین
+
+۶. فدورا
+
+۷. جنتو
+
+۸. PCLinuxOS
+
+۹. پاپی
+
+۱۰. Fruglware&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;درحالی که آمار DistroWatch میگه:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. مینت
+
+۲. مگیا
+
+۳. اوبونتو
+
+۴. فدورا
+
+۵. اوپن‌سوزه
+
+۶. دبین
+
+۷. PCLinuxOS
+
+۸. آرچ
+
+۹. Snowlinux
+
+۱۰. Zorin&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;تفاوت زیادی دارن با هم. برای مثال Frugalware براساس آمار DistroRank رتبه ۱۰ هست، درحالی که تو DistroWatch‏، ۵۹ هست.
+
+DistroRank اشتباهات کمی نداره. مثلا ما هممون میدونیم که مطمئنا Slackware از توزیع Frugalware خیلی پرطرفدارتره، ولی آمار این سایت اینطور نمیگه. به هر حال خوشحالم که سایت جدیدی برای ارائه آمار به وجود اومده.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>distrorank</category><category>DistroWatch</category><category>لینوکس</category><category>گنو/لینوکس</category><category>آمار</category><category>توزیع</category><guid>http://alinuxgeek.github.com/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</guid><pubDate>Fri, 15 Feb 2013 11:53:15 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>نوشته‌های یک گیک (گنو/لینوکس)</title><link>http://alinuxgeek.github.com</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Wed, 12 Jun 2013 23:52:00 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>شرتکات فوکوس روی پنجره ایمکس</title><link>http://alinuxgeek.github.com/posts/20130529shrtkht-bl-fwkhws-rwy-pnjrh-ymkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب، امروز &lt;a href="/posts/emacs-as-a-terminal-emulator.html"&gt;پست شاهین&lt;/a&gt; در مورد استفاده از ایمکس به عنوان ترمینال رو دیدم. یه مدت خودم هم این فکر رو تو سرم داشتم، ولی تنبلی نمیذاره کاری بکنیم ;)‏&lt;/p&gt;
+&lt;p&gt;خوب، این پست رو میخونم. همه جا تا multi-term خوب و خوش پیش میره. ولی وقتی به تنظیمات i3 میرسم، یه چیز جالب یادم میفته: دسکتاپ من i3 نیست! چاره چیه؟&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;باید پنجره ایمکس رو طوری بکنم که با یه شرتکات بیاد و بره. اوپن باکس به هیچ وجه تو مدیریت پنجره‌ها از طریق خط فرمان خوب نیست. پس باید یه راه دیگه پیدا کنم. با یه سرچ، به یه ابزار داخلی X میرسم: xdotool. کمی تو راهنماش میچرخم و چیزهایی رو که لازم هستن پیدا میکنم. چیزایی مثل مینیمایز کردن، بالا آوردن و گرفتن آی‌دی پنجره. خوب، فقط مونده این‌ها رو ترکیب بکنیم. یه اسکریپت کوتاه می‌نویسیم:&lt;/p&gt;
+&lt;p dir="ltr"&gt;‎#! /bin/bash&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;id="$(xdotool search --name --limit 1 emacs@$HOST)"‎&lt;br&gt;
+
+active="$(xdotool getactivewindow)"‎&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;if [ "$id" = "" ]; then&lt;br&gt;
+
+zenity --error --title "Error" --text "No emacs is running\!"‎&lt;br&gt;
+
+exit 1&lt;br&gt;
+
+fi&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;if [ $id != "$active" ]; then&lt;br&gt;
+
+xdotool windowmap $id&lt;br&gt;
+
+xdotool windowfocus $id&lt;br&gt;
+
+else&lt;br&gt;
+
+xdotool windowminimize $id&lt;br&gt;
+
+fi&lt;/p&gt;
+
+&lt;p&gt;اول بگم که اگه بخواین این رو کپی کنین، یه سری کاراکتر برای درست نشون دادن این کد گذاشتم. پس اگه بخواین کپیش کنین، اول چک کنین ببینین کاراکتر اضافی دارین یا نه.&lt;br&gt;
+
+خوب، میشه گفت هرکسی با یه نگاه میتونه بگه این اسکریپت چیکار میکنه. ولی به هر حال توضیح میدم. اولین سطر که میگیم با بش اجرا کن. بعد، آی‌دی پنجره‌ای رو که اسمش emacs@HOSTNAME هست، میگیرم (HOSTNAME همون اسم کامپیوتره منه) که همون پنجره ایمکسه و میذارم تو متغیر id. بعد، آی‌دی پنجره فعال رو میگیرم و اونو هم میندازم تو متغیر active. حالا چک میکنم ببینم اصلا پنجره ایمکسی هست یا نه. اگه نباشه با zenity یه ارور میدم و میزنم بیرون. حالا یه if دیگه میذارم که ببینم پنجره فعال همون ایمکسه یا نه. اگه باشه، مینیمایزش میکنم و اگه نباشه، میارمش بالا و روش فوکوس میکنم.&lt;br&gt;
+
+خوب، حالا این رو تو یه فایل میریزم و یه شرتکات دلخواه براش تعیین میکنم و تمام.&lt;br&gt;
+
+ولی من شخصا زیاد از ترمینال ایمکس خوشم نیومد. بعضی شرتکات‌ها رو ساپورت نمیکنه (که نباید هم بکنه. به هر حال شرتکات‌های خودشه دیگه!) و بعضی کارهای دیگه هم نمیشن.&lt;br&gt;
+
+ولی به هر حال این کد رو نگه میدارم تا شاید یه روز برای برنامه دیگه‌ای، مثل GoldenDict، ازش استفاده بکنم ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>چرا عاشق لینوکس هستم</category><category>گنو/لینوکس</category><category>اوپن باکس</category><category>ایمکس</category><category>ایمکس</category><category>اسکریپت‌ها</category><guid>http://alinuxgeek.github.com/posts/20130529shrtkht-bl-fwkhws-rwy-pnjrh-ymkhs.html</guid><pubDate>Wed, 29 May 2013 14:40:18 GMT</pubDate></item><item><title>یه گیگ‌بازی کوچولو: دانلود ده تا فایل پی‌دی‌اف از «ستاد سلام »</title><link>http://alinuxgeek.github.com/posts/20130524yh-gygbzy-khwchwlw-dnlwd-dh-t-fyl-p.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;دیروز، کسی از گوگل پلاس، که یادم نیست کی بود، &lt;a href="/paper-tools/trakt-nevisi"&gt;این لینک رو از ستاد سلام&lt;/a&gt; شیر کرده بود. درمورد چیزایی مثل حقوق زنان هست. می‌خواستم تمام فایل‌های پی‌دی‌اف رو دانلود بکنم، ولی در شأن یه گیک نیست که تک به تک بشینه فایل‌ها رو دانلود بکنه ;) پس یکی دو خط کد می‌زنیم.&lt;br&gt;
+اول، باید یه فایل اچ‌تی‌ام‌ال از اون صفحه ستاد سلام بگیرم:&lt;/p&gt;
+&lt;p dir="ltr"&gt;wget "&lt;a href="/paper-tools/trakt-nevisi"&gt;http://www.setadsalam.net/paper-tools/trakt-nevisi&lt;/a&gt;" -O trakt_nevisi.html&lt;/p&gt;
+
+&lt;p&gt;حالا، باید لینک‌ها رو از فایل جدا کنیم و بذاریم تو یه فایل دیگه:&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;cat trakt_nevisi.html | grep -Po 'href="(.*?)\.pdf"' | cut -d\" -f2 | uniq | sed "s|^|&lt;a href="http://www.setadsalam.net"&gt;http://www.setadsalam.net&lt;/a&gt;|g" | tee URLs&lt;/p&gt;
+
+&lt;p&gt;خلاصه این کد اینه که اول با grep و cut آدرس‌ها رو از فایل جدا می‌کنیم، بعد چون هر آدرس یه بار هم تکرار شده، تکراری‌ها رو حذف می‌کنیم و بعد، به خاطر این که اولشون اسلش (/) هست و نه آدرس سایت، آدرس ستاد سلام رو هم به اولش اضافه می‌کنیم. بعدش هم با tee آدرس‌ها رو تو فایل URLs میذاریم.&lt;br&gt;
+
+خوب، حالا فقط دانلودشون مونده:&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;wget -i URLs&lt;/p&gt;
+
+&lt;p&gt;با آپشن ‎-i به wget میفهمونیم که باید آدرس‌ها رو از فایل URLs بگیره.&lt;br&gt;
+
+حالا برای اطمینان، تعداد فایل‌ها رو بررسی می‌کنیم:&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;‎ $ ls *.pdf | wc -l&lt;br&gt;
+
+‎10&lt;/p&gt;
+
+&lt;p&gt;خوب، ده تا کلیک صرفه‌جویی شد ;)&lt;/p&gt;
+
+&lt;p&gt;پی‌نوشت: این پست و &lt;a href="/2013/05/23/%D8%AF%D9%88%D8%B1%D9%87-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AE%D9%88%D8%A7%D9%86%D9%86%D8%AF%D9%87%E2%80%8C%D9%87%D8%A7-%D9%88-%D9%BE/"&gt;پست قبلی&lt;/a&gt; رو با ایمیل به وردپرس فرستادم. واسه همین تا وقتی که بتونم سد فیلترینگ رو رد بکنم، این دو مطلب و شاید مطالب بعدی رو به دسته خاصی نمی‌تونم اضافه بکنم.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>چرا عاشق لینوکس هستم</category><category>چرا عاشق لینوکس هستم</category><category>گنو/لینوکس</category><category>اسکریپت‌ها</category><category>ستاد سلام</category><guid>http://alinuxgeek.github.com/posts/20130524yh-gygbzy-khwchwlw-dnlwd-dh-t-fyl-p.html</guid><pubDate>Fri, 24 May 2013 06:59:43 GMT</pubDate></item><item><title>آرچ‌بوک ۲۰۱۳.۱ اومد</title><link>http://alinuxgeek.github.com/posts/20130310archbwkh-2013-1-wmd.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;بعد از گذشت یک سال از انتشار آرچ‌بوک قبلی، که مال موقعی بود که آرچ نصاب گرافیکی داشت، &lt;a title="کتاب آرچ‌بوک ۲۰۱۳.۱ منتشر شد!" href="http://emanlog.com/?p=324" target="_blank"&gt;آرچ‌بوک جدید&lt;/a&gt; با بازنویسی و زحمات &lt;a title="ایمان‌لاگ" href="http://emanlog.com/" target="_blank"&gt;ایمان&lt;/a&gt; منتشر شد. این کتاب، در واقع راهنمای شروع توزیع آرچ‌لینوکس هست که هم برای مبتدی‌ها و حتی بعضی وقت‌ها برای حرفه‌ای‌ها مناسبه. به علاوهٔ آموزش نصب آرچ، کلی اطلاعات دیگه هم داده که خیلیاشون ممکنه برای کاربرهای توزیع‌های دیگه هم مناسب باشه.
+&lt;/p&gt;&lt;p style="text-align:justify;"&gt;به نقل از وبلاگ ایمان:&lt;/p&gt;
+&lt;blockquote&gt;
+
+&lt;p style="text-align:justify;"&gt;این نسخه از کتاب در دو نسخه ارائه می‌شود. هر دو نسخه از نظر محتوا کاملا شبیه به یکدیگر می‌باشند و تنها تفاوت آن‌ها در صفحهٔ سپاس است.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;اما صفحهٔ سپاس چیست؟ دوستانی که از طریق لینکی که در ادامه قرار گرفته کتاب را به مبلغ ۳۸۰۰ تومان خریداری کنند نسخهٔ امضا شده که حاوی تشکر بنده به همراه امضاء در انتهای آن است را به منظور قدردانی دریافت خواهند کرد.&lt;/p&gt;
+
+&lt;/blockquote&gt;
+
+&lt;p style="text-align:justify;"&gt;با دادن مبلغ ۳۸۰۰ تومن، از ایمان و کتابش همایت خوبی می‌کنین و انگیزه نسخه بعدی آرچ‌بوک رو بیشتر می‌کنین.&lt;/p&gt;
+
+&lt;blockquote&gt;به هر حال حمایت شما از کتاب با خرید نسخهٔ امضا شده ما را در خلق آثاری از این دست در آینده یاری خواهد کرد.
+
+
+
+همچنین شما می‌توانید از طریق صفحهٔ زیر هدایای نقدی خود را برای ما ارسال کنید.
+
+
+
+&lt;a href="http://emanlog.com/?page_id=74"&gt;http://emanlog.com/?page_id=74&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;برای خرید کتاب (یا دانلود نسخه رایگانش)، به &lt;a title="کتاب آرچ ۲۰۱۳.۱ منتشر شد!" href="http://emanlog.com/?p=324" target="_blank"&gt;وبلاگ ایمان&lt;/a&gt; برین. بعد از خرید، کتاب به ایمیل شما ارسال میشه.&lt;/p&gt;</description><category>2013</category><category>کتاب</category><category>کتاب</category><category>گنو/لینوکس</category><category>۲۰۱۳</category><category>آرچ</category><category>آرچ بوک</category><guid>http://alinuxgeek.github.com/posts/20130310archbwkh-2013-1-wmd.html</guid><pubDate>Sun, 10 Mar 2013 13:11:18 GMT</pubDate></item><item><title>وبسایتی جدید برای آمارگیری توزیع‌های لینوکس و BSD</title><link>http://alinuxgeek.github.com/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;احتمالا قبلا با سایت DistroWatch مواجه شدین. این سایت علاوه بر ارائه اطلاعات درمورد توزیع‌های مختلف (لینوکس و BSD)، آماری هم براساس کلیک کاربرها روی لینک توزیع‌ها میده.
+امروز، داشتم فیدها رو چک میکردم که به یه مطلب از &lt;a title="LXer Linux News" href="http://lxer.com" target="_blank"&gt;LXer&lt;/a&gt; رسیدم. سایت جدیدی برای ارائه آمار توزیع‌های لینوکس و BSD به نام &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;این سایت براساس گفته خودش، به توزیع خودش امتیاز اضافی نمیده و حتی نگفته از چی استفاده میکنه. آمار هم براساس چهار چیز هست:&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;۱. تعداد نتایج چند موتور جستحوی مختلف
+
+۲. تعداد مقاله‌ها و اخبار درمورد توزیع
+
+۳. درصد استفاده از توزیع در سرورهایی که گزارش دادن
+
+۴. درصد استفاده از توزیع توسط کاربرهای دسکتاپی که گزارش دادن&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;از منابع مورد استفاده میشه به &lt;a title="Google" href="http://www.google.com" target="_blank"&gt;گوگل&lt;/a&gt;، &lt;a title="Bing" href="http://bing.com" target="_blank"&gt;بینگ&lt;/a&gt;، &lt;a title="Netcraft" href="http://news.netcraft.com/" target="_blank"&gt;Netcraft&lt;/a&gt; (یه وبلاگ که احتمالا مال صاحب این سایت هست) و آمار کاربران مراجعه‌کننده به خود &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt; اشاره کرد.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;با یه نگاه به آمار این سایت میشه تفاوتش رو با سایت DistroWatch دید. آمار DistroRank اینطور هستن:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. اوبونتو
+
+۲. مینت
+
+۳. ردهت
+
+۴. آرچ
+
+۵. دبین
+
+۶. فدورا
+
+۷. جنتو
+
+۸. PCLinuxOS
+
+۹. پاپی
+
+۱۰. Fruglware&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;درحالی که آمار DistroWatch میگه:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. مینت
+
+۲. مگیا
+
+۳. اوبونتو
+
+۴. فدورا
+
+۵. اوپن‌سوزه
+
+۶. دبین
+
+۷. PCLinuxOS
+
+۸. آرچ
+
+۹. Snowlinux
+
+۱۰. Zorin&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;تفاوت زیادی دارن با هم. برای مثال Frugalware براساس آمار DistroRank رتبه ۱۰ هست، درحالی که تو DistroWatch‏، ۵۹ هست.
+
+DistroRank اشتباهات کمی نداره. مثلا ما هممون میدونیم که مطمئنا Slackware از توزیع Frugalware خیلی پرطرفدارتره، ولی آمار این سایت اینطور نمیگه. به هر حال خوشحالم که سایت جدیدی برای ارائه آمار به وجود اومده.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>distrorank</category><category>DistroWatch</category><category>لینوکس</category><category>گنو/لینوکس</category><category>آمار</category><category>توزیع</category><guid>http://alinuxgeek.github.com/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</guid><pubDate>Fri, 15 Feb 2013 11:53:15 GMT</pubDate></item><item><title>مسابقه‌ی سیتو: چرا گنو/لینوکس را دوست دارم؟</title><link>http://alinuxgeek.github.com/posts/20130114why-i-love-gnulinux.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;a href="http://blog.sito.ir/wp-content/uploads/2013/01/blog-competition-120.png"&gt;&lt;img class="alignleft" alt="مسابقه: چرا گنو/لینوکس را دوست دارم" src="http://blog.sito.ir/wp-content/uploads/2013/01/blog-competition-120.png" width="120" height="223"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;اول بگم که قالب وبلاگ عوض شده. از تم پیش‌فرض وردپرس خسته شده بودم.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;وبسایت &lt;a title="فروشگاه لینوکس سیتو" href="http://shop.sito.ir" target="_blank"&gt;سیتو&lt;/a&gt; (که یه فروشگاه برای وسایل لینوکسی هست و برای همایش‌ها و مسبقات زیادی کمک کرده) &lt;a title="مسابقه چرا گنو/لینوکس را دوست دارم؟" href="http://blog.sito.ir/why-i-love-gnulinux/" target="_blank"&gt;مسابقه‌ای برگذار کرده&lt;/a&gt; که برای شرکت در اون، باید مطلبی تو وبلاگ (یا شبکه‌های اجتماعی مختلف) بنویسیم و بدیم بهشون.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;بذارین دلیل دوست داشتن لینوکس رو از طریق آشنایی باهاش شروع کنم. اوایل من اصلا نمیدونستم لینوکس چی هست. ولی یه روز یکی بهم فدورا هدیه کرد. پرس و جو کردیم دیدیم فدورا برای شروع زیاد خوب نیست! پس رفتیم سراغ اوبونتو. دانلود شد، ولی هیچوقت نصب نکردم. تا اینکه ۶ ماه بعدش، مینت رو نصب کردم. اول فقط برای امتحان بود. بعد برای کلاس گذاشتن! بعدش، کم‌کم با فلسفش هم آشنا شدم. خوشم اومده بود. اون موقع من سی‌شارپ کار میکردم، به همین خاطر سخت بود مهاجرت به لینوکس. باید هرچیزی بلد بودم ول میکردم. پس ویندوز رو نگه داشته بودم برای وقتایی که برنامه نویسی میکردم. ولی در عین حال، شروع کردم به یادگیری پایتون. خوب بود. کم‌کم از سی‌شارپ دور شدم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;وقتی این‌ها رو یاد میگرفتم، شروع کردم به یادگیری خط فرمان. دوست داشتم کمتر از موس استفاده کنم. طوری که الان غیر از وبگردی، برای تقریبا هیچ کاری از موس استفاده نمیکنم. ولی بعد از شروع، با دیدن &lt;a title="جادی: چرا گنو/لینوکس را دوست دارم" href="http://jadi.net/tag/%DA%86%D8%B1%D8%A7-%DA%AF%D9%86%D9%88%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D8%B1%D9%88-%D8%AF%D9%88%D8%B3%D8%AA-%D8%AF%D8%A7%D8%B1%D9%85/" target="_blank"&gt;پست‌های جادی&lt;/a&gt;، فهمیدم که دنیای خط فرمان خیلی وسیع‌تر از اون چیزیه که من فکر میکردم. اسکریپت‌نویسی رو دوست داشتم. خوشم میومد که کارهای بزرگ رو با چند خط کد تموم کنم. پس این‌دفعه جدی‌تر شدم. دیگه برای فان یاد نمیگرفتم. برای راحت‌کردن زندگی مجازیم بودن. پایتون، پرل، شل‌اسکریپتینگ. همشون عالی بودن. ولی شل‌اسکریپتینگ به نظرم خیلی بهتر بود. ابزارهای مختلف رو ترکیب بکنی و یه نتیجه بدی بیرون. فوق‌العادست.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;به جایی رسیده بودم که دیگه فایل‌منیجرها هم برام بی‌معنی شده بودن. غیر از مرورگر و چند تا برنامه چت و کلاینت شبکه‌های اجتماعی، تقریبا از هیچ برنامه گرافیکی استفاده نمیکردم. برام لذت‌بخش بود. دوست داشتم همه چیز رو خودم بسازم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;اوایل با Cinnamon و Mate بودم. بعد دیگه خسته شدم. رفتم به طرف KDE، گنوم، Xfce و یونیتی. Xfce عالی بود. ولی باز هم برای منی که عاشق ساختن دسکتاپم بودم، خوب نبود. رفتم سراغ مدیرپنجره‌ها. تو &lt;a title="شاهینیسم" href="http://shahinism.com" target="_blank"&gt;وبلاگ شاهین&lt;/a&gt; خونده بودم که Awesome خوبه. نصبش کردم، ولی چون درک خوبی از مدیرپنجره‌ها نداشتم، نفهمیدم چطور باید کار بکنم. ولش کردم. فکر میکردم هنوز برام زوده. چند ماه رو با Xfce گذروندم. بعد مینت رو پاک کردم و فدورا نصب کردم و از گنوم ۳ استفاده کردم. واقعا تجربه‌ی بدی بود. از دست فدورا کلافه شده بودم، پس اوبونتو نصب کردم و دسکتاپم شد یونیتی. جالب بود که بعد از این‌همه مدت، اولین بار بود که اوبونتو نصب کرده بودم. بعد از اون، به طور اتفاقی چند تا مقاله درمورد اوپن باکس خوندم. به نظر خوب میومد. نصبش کردم. با &lt;a title="OpenBox HowTo" href="http://linuxreview.ir/1390/03/openbox-how-to/" target="_blank"&gt;راهنمای ایمان&lt;/a&gt;، نصب و کانفیگش کردم. عالی بود. موندگار شدم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;بعد از مدتی، از اوبونتو خسته شدم. مشکلات زیادی داشت. البته هنوز برای یه کاربر تازه‌کار گزینه خوبی بود. دنبال توزیع دیگه‌ای گشتم. می‌خواستم بین دبین، آرچ و اسلکور یکی رو انتخاب بکنم. حجم دبین زیاد بود و دانلودش طول میکشید. تازگی زیادی هم برام نداشت. به شاهین چند تا ایمیل درمورد اسلکور زدم. فهمیدم که توزیعی بدون مخازن نرم‌افزاری پر، به کارم نمیاد. آرچ هم خاطره خوبی نداشت برام. (اول کار یه بار نصبش کرده بودم و چون بلد نبودم گراب رو کانفیگ بکنم، گیر کرده بودم تو آرچ، اونم بدون گرافیک. البته گرافیک داشتم، ولی فقط X خالی که به خاطر مشکل با GTK، هیچ چیزی درست کار نمیکرد. حتی Xfce) ولی دلو زدم به دریا و دوباره آرچ نصب کردم. میدونستم که این‌بار گراب برام مشکلی ایجاد نمیکنه. چون بلدش بودم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;عالی بود! بهتر از اون چیزی که فکرشو میکردم. اوپن‌باکس رو کانفیگ کردم و خیلی بهتر از قبل شد. آرچ توزیع همیشگیم شده بود. از همه‌ی چیزهایی که به دردم میخوردن خبر داشتم. احساس امنیت میکردم. این که همه چیز رو درمورد سیستم‌عاملی که باهاش کار میکنین بدونین، فوق‌العاده بود.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;الان لینوکس همه چیز من هست. عاشقشم. دوست دارم یادش بگیرم، توسعش بدم و درموردش بنویسم. دوست دارم با گیک‌ها آشنا بشم. کسایی که مثل من فکر میکنن. جالب اینجاست که بیشتر لینوکسی‌ها، از نظر سطح فکری هم بالا هستن. برنامه‌نویس، هکر، کتاب‌خون. لینوکسی‌ها سطح فکری بالایی دارن. نمیگم ویندوزی‌ها اینطور نیستن، ولی از نظر درصد، لینوکسی‌ها بالاترن. من دوست دارم با کسایی که گسترده‌تر فکر میکنن باشم. کسایی که سنت‌ها رو میذارن کنار و با عقلشون تصمیم میگیرن. اونایی که کسی رو مجبور به کاری نمیکنن. منتقدها. طرفدارهای آزادی. اینا کسایی هستن که من میخوام باهاشون باشم.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>IloveGNULinux</category><category>مسابقه</category><category>چرا لینوکس را دوست دارم</category><category>چرا عاشق لینوکس هستم</category><category>چرا عاشق لینوکس هستم</category><category>گنو/لینوکس</category><category>whyilovegnulinux</category><category>سیتو</category><guid>http://alinuxgeek.github.com/posts/20130114why-i-love-gnulinux.html</guid><pubDate>Mon, 14 Jan 2013 08:12:34 GMT</pubDate></item><item><title>ترجمه: من بچه‌هام رو با خط فرمان به بار آوردم... و اونا عاشقشن</title><link>http://alinuxgeek.github.com/posts/20130109trjmh-mn-bchhhm-rw-b-kht-frmn-bh-br-a.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;امروز داشتم فید ریدرم رو چک میکردم که &lt;a title="من بچه‌هام رو با خط فرمان به بار آوردم... و اونا عاشقشن" href="http://lifehacker.com/5974087/i-raised-my-kids-on-the-command-lineand-they-love-it" target="_blank"&gt;این پست خوب&lt;/a&gt; رو توی لایف‌هکر دیدم. حیف بود ترجمش نکنم. ببخشید اگه ترجمش زیاد خوب نشده.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;دو سال قبل، پسر سه ساله من جِیکوب (Jacob) و من اولین کامپیوتر اون رو باهمدیگه ساختیم. من روش دبین نصب کردم، ولی به هیچ وجه GUI نذاشتم. این خط فرمان بود و سرگرمی زیادی تو این دو سال با خودش آورد. صورت متعجبی از مردم میبینم وقتی که توضیح میدم پسر من از سه سالگی میتونسته به شل لینوکس لاگین بکنه. به خصوص وقتی میگم زیاد هم سخت نبود. به جای یاد دادن بالا آوردن Xbox، اون یاد گرفته که چطور بش رو باز بکنه. من اینو دوست دارم.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;تازگیا، جیکوب (الان ۵ سالست) مدت زمان زیادی رو باهاش سپری نمیکنه. من فکر کنم اون هنوز تو مرحله‌ای نیست که محدودیت‌هاش رو رد بکنه، ولی داره خسته میشه. پس فکر کردم بهتره GUI رو به یه روش محدود شروع بکنم تا بهش اجازه بدم عکس و ویدیو از دوربین اسباب‌بازی Vtechش بگیره (اون ویدیو‌ها و عکس‌های low-res (کم پژوهش؟)ی داره که با USB1 میشه گرفتشون). جیکوب با مفهوم GUI آشنا هست، چون تو کامپیوتر Terah (احتمالا همسرشه) (گنوم ۲) و من (Xfce و xmonad) رو دیده.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پس شب قبل، اولیور (Oliver) دو ساله و من رفتیم به زیرزمین به جستجوی موس. مطمئن بودم که من یه موس PS/2 قدیمی اونجا داشتم که خوب کار میکرد. هر دو پسر بهم کمک کردن که تو اتاق بازی، سیم اون رو وصل کنیم به کامپیوتر. خیلی هیجان‌زده شدن وقتی کامپیوتر بالا اومد و چراغ قرمز زیر موس رو دیدن. خیلی سخته توضیح بدم چقدر هیجان‌زده بودن. یادمه منم موقعی که اولین موسم رو خریدم اینقدر هیجان‌زده بودم (فکر کنم یه کم سنم بالاتر بود).&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;به جیکوب کمک کردم که برای اولین بار با یوزر ریشه (root) لاگین بشه (جیکوب نوشت root، من پسورد رو زدم و شروع کردم به توضیح دادن که چرا داریم به کامپیوتر میگیم که ما یوزر ریشه هستیم). جیکوب و اولیور چند خط دستور apt-get زدن. وقتی منتظر بودیم برنامه دانلود بشه، من مجبور بودم به سوال‌های تکراری «چطور موس قراره کار بکنه؟» و «نصب یعنی چی؟» جواب بدم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;بالاخره تموم شد و من به جیکوب گفتم بنویسه startx. من عمدا دسکتاپ نصب نکردم. اون بمونه برا بعد. جیکوب اینتر رو زد. صفحه ۵ ثانیه سیاه شد و X اومد. کلمه «هیجان‌زده» نمیتونه توضیح بده که اونا تو چه حالی بودن. اون به نوبت با موس بازی میکردن. عاشق این شده بودن که چطور آیکون سطل‌زباله، آشغال رو تو خودش نشون میداد (با Xfce شروع کردم).&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ولی اونا فقط موس رو یاد میگرفتن، و کلی چیز درمورد GUI وجود داره که برای کسی که هنوز با موس حرفه‌ای نیست، سخته. کلیدهای بستن پنجره کوچیک بودن و پنجره‌ها خیلی راحت میتونستن رو و زیر پنل‌ها و منوها برن. وقتی من نشستم و درموردش فکر کردم، دیدم این نوع طراحی GUI یه چیزی که «همیشه همونجور کار بکنه» ارائه نمیده که برای یه بچه مناسب باشه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;و اون موقع به فکرم رسید: بهترین GUI برای یه بچه xmonad (یه Tiling WM که میتونه تقریبا به طور کامل به وسیله کیبورد استفاده بشه و نیازی به موس نباشه) هست. نه دسکتاپی، و نه فایل‌منیجری. فقط یه مدیر پنجره با راه کلاسیک X. بله!&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پس بعد از اینکه پسرا رفتن به تختشون، من xmonad رو نصب کردم. من رو اکانت جیکوب یه .xsession‎ ساده گذاشتم که یه xmonad و یه ترمینال اجرا بکنه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;امروز، جیکوب بهم گفت که میخواد کامپیوترش عینا مثل مال من باشه. دقیقا چیزی که میخواستم! ولی وقتی اون با هیجان startx رو زد، گفت این دقیقا مثل مال من نیست. او اوه! مثل اینکه میخواست والپیپرش هم مثل مال من باشه. واو! فهمیدم که xli (؟) تو پنجره روت اجرا میشه و من باید یه خط دیگه به .xsession اضافه میکردم. شوق بیشتر!&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;جیکوب خیلی سریع تو استفاده از کلیدهای میانبر xmonad ماهر شد. Alt-Shit-C برای بستن یه پنجره. Alt-Shift-Q برای بازگشت سریع به «صفحه سیاه بزرگ».  Alt-Shift-Enter برای باز شدن یه پنجره ترمینال.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ما thunar (فایل‌منیجر Xfce) رو اجرا کردیم و دوربین جیکوب رو وصل کردیم. اون داشت از دیدن عکس‌ها و ویدیوهای اون لذت میبرد. ولی اونوقت من لذت اصلی روز رو براش آوردم: پیشنهاد دادم که براش Tuxpaint رو نصب بکنم. این احتمالا برنامه مورد علاقش هست.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;اون بی‌صبرانه apt-get رو که 1m30s برای Tuxpaint و لایبرری‌هاش پایین میومد نگاه کرد. بعد اجراش کردیم و اون خواست که شام رو برای بازی با Tuxpaint رد بکنه، تو «کامپیوتر مخصوص خودش».&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;من برای مدت زیادی فکر میکردم چطور GUI رو شروع بکنم. توجه میکردم که بچه‌هایی که از Commodores یا TRS-80s یا DOS استفاده میکردن، خیلی بیشتر در مورد کارکرد کامپیوترشون میدونستن تا کسایی که تو همون سن از ویندوز یا مک استفاده میکردن. من نمیخواستم که پسرامون مرحله یاد گرفتن کارکرد تکنولوژی که باهاش کار میکنن رو رد بکنن. من با این راه‌حلم خوش‌حالم. اون‌ها هنوز برای اجرای برنامه‌ها از کامندها استفاده میکنن، تا وقتی که از برنامه‌های گرافیکی بیشتر از برنامه‌های تحت خط‌فرمان استفاده بکنن.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;موقع خواب، جیکوب ازم خیلی جدی پرسید:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- بابا، من چطور Tuxpaint رو دوباره اجرا بکنم؟&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- اول لاگین بکن و بنویس startx. اونوقت میتونی از موس استفاده بکنی.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;جیکوب با سرش اشاره میکنه و با یه قیافه متفکرانه...&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- و؟&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;من ادامه میدم،&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- تو ترمینال مینویسی tuxpaint، و اون بالا میاد.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;جیکوب سرش رو برای بار دوم خیلی جدی تکون میده و این اطلاعات بسیار مهم رو به حافظه‌ی بلند‌مدتش میسپاره. بعد کمی هیجان‌زده میشه و فریاد میکشه «عالیه!»، و به خواب فرو میره.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>لینوکس</category><category>چرا عاشق لینوکس هستم</category><category>کامندلاین</category><category>گنو/لینوکس</category><category>خط فرمان</category><category>عمومی</category><guid>http://alinuxgeek.github.com/posts/20130109trjmh-mn-bchhhm-rw-b-kht-frmn-bh-br-a.html</guid><pubDate>Wed, 09 Jan 2013 09:48:36 GMT</pubDate></item><item><title>جایگزین اوبونتو برای تازه‌کارها</title><link>http://alinuxgeek.github.com/posts/20121221jygzyn-wbwntw-bry-tzhkhrh.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;بنابر &lt;a title="Ubuntu Spyware" href="http://www.fsf.org/blogs/rms/ubuntu-spyware-what-to-do" target="_blank"&gt;فرمایش ریچارد استالمن&lt;/a&gt;، اوبونتو جاسوس شناخته شده. چون از اطلاعات کاربر رو به آمازون میده. آمازون هم در سایت بدیه، چون فرمت کتاب‌هاش pdf هستن و چند چیز دیگه. شاید شما هم بگین من مشکلی ندارم، من هم که در کل از اوبونتو استفاده نمیکردم از اول. ولی اگه بخوایم به یه تازه‌وارد، توزیعی پیشنهاد بکنیم، اوبونتو خوبه؟
+فرض کنین پیشنهاد دادیم و اوبونتو نصب کرد و همه شاد و خرم شدیم. به نظرتون الان این کاربر، لینوکس رو سیستم‌عامل فوق‌العاده‌ای میدونه؟ سیستم‌عاملی که وقتی توش دنبال یه برنامه میگردی، آمازون اونجا بهت چشمک بزنه، هیچوقت سیستم‌عامل قدرتمندی به نظر نمیاد. درواقع، من شخصا اگه کاربر تازه‌واردی باشم و همچین چیزی داشته باشم، فقط از جنبه تفریحی بهش نگاه میکنم و وقتی کسی بهم بگه لینوکس سیستم‌عامل قدرتمندی هست، خندم میگیره. وقتی تبلیغی توی سیستم‌عاملی باشه، حتی اگه از سیستم عامل رو محدود نکنه، اون رو ضعیف نشون میده.&lt;/p&gt;
+&lt;p&gt;خوب الان فهمیدیم که اوبونتو برای یه تازه‌وارد خوب نیست و عقیدش رو درمورد لینوکس عوض میکنه. پس وقتی برای کسی لینوکس رو پیشنهاد میکنیم، کدوم توزیع اوبونتو بیس بهتره؟&lt;/p&gt;
+&lt;h3 style="text-align:justify;"&gt;&lt;a title="AriOS" href="http://fa.arioslinux.org" target="_blank"&gt;AriOS&lt;/a&gt;
+
+&lt;/h3&gt;&lt;p style="text-align:justify;"&gt;یک توزیع ایرانی عالی. حجم اولیه دانلودش زیاده، ولی در عوض بعد از نصب، نرم‌افزارهای کمتری نسبت به اوبونتو باید دانلود بشن. رتبش توی &lt;a title="Distro Watch" href="http://distrowatch.com" target="_blank"&gt;distrowatch&lt;/a&gt; هفتاد هست. از گنوم شل استفاده میکنه و نرم‌افزارهای آزاد زیادی بصورت built in داره. مشخصاتش رو میتونین از &lt;a title="AriOS 4 Final Release" href="http://fa.arioslinux.org/2012/10/arios4-final-released" target="_blank"&gt;سایت خودش&lt;/a&gt; ببینین.
+
+این توزیع برای ایرانی‌ها خیلی خوبه و تازه‌واردها (و حرفه‌ای‌ها) رو از شر تنظیم برای زبان فارسی و دانلود نرم‌افزارها با این سرعت ماهواره‌ای خلاص میکنه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;&lt;a title="Zorin OS" href="http://zorin-os.com" target="_blank"&gt;Zorin OS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;این توزیع، با رتبه ۹ دیستروواچ، برای این ساخته شده که شبیه ویندوز باشه. Zorin OS، سه نسخه داره: یه نسخه معمولی، یه نسخه برای کامپیوترهای قدیمی و ضعیف و یه نسخه برای مدرسه‌ها.
+
+من موافق این نیستم که قیافه لینوکس مثل ویندوز باشه. ولی بعضی‌ها ممکنه اصلا کاری به قدرت لینوکس نداشته باشن و فقط بخوان از یه سیستم‌عامل امن استفاده بکنن. برای اون‌ها، که نمیخوان یا وقت ندارن محیط جدیدی رو یاد بگیرن، Zorin OS توزیع خوبی میتونه باشه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;&lt;a title="Xubuntu" href="http://www.xubuntu.org" target="_blank"&gt;Xubuntu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;گفتیم اوبونتو بخاطر یونیتی بده. خوب، اوبونتو با Xfce چطوره؟ یه توزیع ساده و عالی برای کامپیوترهای ضعیف. من یکی از طرفدارهای Xfce هستم، چون واقعا بی‌عیب و نقصه! این توزیع، به نوشته خودش، تا حد امکان از برنامه‌های GTK+‎ استفاده میکنه و به همین خاطر از سنگینی Qt هم دور میمونین.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;&lt;a title="Voyager" href="http://voyager.legtux.org" target="_blank"&gt;Voyager&lt;/a&gt;&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ٰvoyager، با اینکه رتبه ۱۶۹ بین توزیع‌ها هست، ولی درحال محبوب شدنه. طوری که اگه ادامه بده احتمالش زیاده که تا سال بعد به رتبه زیر ۵۰ برسه.
+
+این توزیع از Xfce (با قیافه فوق‌العاده و خاصش) استفاده میکنه. از Avant Window Navigator به عنوان Dock استفاده میشه. حدود ۳۰۰ انیمیشن و تصویر برای استفاده به عنوان بکگراند هم داره و به طور کلی، توزیع خوبی برای شروع یا استفاده روزمره هست.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>spyware</category><category>گنو/لینوکس</category><category>اوبونتو</category><category>جایگزین اوبونتو</category><guid>http://alinuxgeek.github.com/posts/20121221jygzyn-wbwntw-bry-tzhkhrh.html</guid><pubDate>Fri, 21 Dec 2012 08:31:54 GMT</pubDate></item><item><title>بیشترین زبان‌ها در Subscene</title><link>http://alinuxgeek.github.com/posts/20121122byshtryn-zbnh-dr-subscene.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;a title="Subscene" href="http://subscene.com" target="_blank"&gt;Subscene&lt;/a&gt; یه سایت خوب برای دانلود زیرنویس هست. به هر زبانی میشه توش زیرنویس پیدا کرد و من معمولا زیرنویس‌هام رو از اونجا دانلود میکنم، چه انگلیسی چه فارسی.
+ولی امروز سوالی برام پیش اومد. چقدر زیرنویس فارسی بین این زیرنویس‌ها هست؟ برای گرفتن جواب اول باید یه مقدار اطلاعات از این سایت بگیریم.  چطور؟ خوب، &lt;a title="Subscene - Browse" href="http://subscene.com/browse" target="_blank"&gt;قسمت browse سایت Subscene&lt;/a&gt; میتونه کمک کنه. پس با کمک یه حلقه for صد صفحه از این قسمت دانلود میکنیم (حداکثر مقدار):&lt;/p&gt;
+&lt;p dir="ltr" style="text-align:justify;"&gt;for ((i=1;i&amp;lt;101;i++)); do usewithtor axel "https://subscene.com/browse/latest/all/${i}" -o ${i}.html; done&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;به خاطر این که دانشمندهای کشور فهمیدن که این سایت برای ما خوب نیست، فیلترش کردن. برای همین مجبوریم از تور (یا وی‌پی‌ان یا هر روش دیگه‌ای برای رد کردن فیلتر) استفاده کنیم. برای همین usewithtor رو میذارم که axel با تور اجرا بشه.
+
+خوب حالا صد صفحه HTML داریم. چطور ازشون استفاده بکنیم؟ به سادگی:&lt;/p&gt;
+
+&lt;p dir="ltr" style="text-align:justify;"&gt;cat ../*.html | grep '&amp;lt;span&amp;gt;' -A1 | egrep -v "&amp;lt;|--" | tr -d "\t" &amp;gt; result&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;حالا زبان‌ها رو توی فایل result داریم. چطور رتبه‌بندیشون بکنیم؟ با این یک خط کد:&lt;/p&gt;
+
+&lt;p dir="ltr" style="text-align:justify;"&gt;cat result | sort | uniq -c | tr -s " " | sed "s/ //" | sort -V &amp;gt; result2&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;حالا تعداد زبان‌های استفاده شده رو هم داریم. به صورت مرتب شده. نتیجه من توی فایل result2 اینه (ممکنه اگه الان شما این کار رو بکنین، نتیجه شما با مال من فرق بکن. چون تا الان مطمئنا زیرنویس‌هایی به Subscene اضافه شدن):&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;1 Bulgarian
+
+1 Chinese BG code
+
+1 Croatian
+
+1 Czech
+
+1 Estonian
+
+1 Turkish
+
+2 Hungarian
+
+3 Bengali
+
+5 Finnish
+
+5 Korean
+
+5 Lithuanian
+
+5 Russian
+
+5 Thai
+
+7 Serbian
+
+8 Japanese
+
+8 Sinhala
+
+8 Spanish
+
+10 Portuguese
+
+12 Greek
+
+13 Norwegian
+
+16 Romanian
+
+17 Dutch
+
+21 Italian
+
+27 German
+
+35 Malay
+
+35 Swedish
+
+39 Hebrew
+
+46 French
+
+51 Danish
+
+91 Vietnamese
+
+196 Arabic
+
+200 Farsi/Persian
+
+235 Indonesian
+
+537 English&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;تعجب کردین؟ فارسی رتبه سوم رو داره!
+
+البته میدونم که آمار کل زیرنویس‌های سابسین با جدیدترین‌هاش خیلی فرق داره. ولی به هر حال، آمار جالبی به نظر میاد!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>subscene</category><category>subtitle</category><category>فارسی</category><category>گنو/لینوکس</category><category>اسکریپت‌ها</category><category>زیرنویس</category><category>عمومی</category><guid>http://alinuxgeek.github.com/posts/20121122byshtryn-zbnh-dr-subscene.html</guid><pubDate>Thu, 22 Nov 2012 22:02:55 GMT</pubDate></item><item><title>چند کار بعد از نصب آرچ</title><link>http://alinuxgeek.github.com/posts/20121115chnd-khr-bd-z-nsb-arch.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبول میکنم عنوان کمی گنگه! چون هرچی باشه آرچ از همون لحظه که نصب میشه هزار کار داره که انجام بشه. ولی اینایی که میخوام بنویسم برای بعد از نصب و کانفیگ دسکتاپ و کارهای اولیه هست. (میشه گفت یه نوت برای آینده هست)
+&lt;/p&gt;&lt;h4&gt;نصب ntfs-3g&lt;/h4&gt;
+&lt;p&gt;توضیح خاصی نداره. برای مونت کردن پارتیشن‌های ntfs باید نصب باشه.&lt;/p&gt;
+&lt;h4&gt;حل مشکل دیر لود شدن ایمکس&lt;/h4&gt;
+
+&lt;p&gt;بعد از کمی جستجو درمورد این مشکل، فهمیدم که مشکل از فایل /etc/hosts هست. باید این سطر رو بهش اضافه میکردم:&lt;/p&gt;
+&lt;p&gt;127.0.0.1       HOSTNAME              HOSTNAME&lt;/p&gt;
+&lt;p&gt;که به جای هر دو HOSTNAME باید اسم کامپیوترتون رو بذارین. اگه مثلا خودتون سیستم رو کانفیگ نکردین و نمیدونین اسم کامپیوتر چیه، از دستور hostname استفاده بکنین.&lt;/p&gt;
+&lt;h4&gt;درست کردن ~/.xinitrc برای باز کردن دسکتاپی که من میخوام، نه اونی که از قبل تایین شده&lt;/h4&gt;
+
+&lt;p&gt;برای این کار، توی این فایل بنویسین:&lt;/p&gt;
+&lt;p dir="ltr"&gt;if [ $# -eq 0 ]; then
+
+exec openbox-session
+
+else
+
+exec "$1"
+
+fi&lt;/p&gt;
+
+&lt;p&gt;که البته میتونین به جای openbox-session از هر دسکتاپی که بخواین، به عنوان دسکتاپ پیش‌فرض استفاده کنین.&lt;/p&gt;
+&lt;h3 style="text-align:justify;"&gt;Psi برای استفاده از گوگل تاک
+
+&lt;/h3&gt;&lt;p style="text-align:justify;"&gt;بعد از مدت‌ها تلاش برای استفاده از گوگل تاک توی پیجین، دیگه ناامید شدم و رفتم سمت Psi. برای یادگرفتنش هم از &lt;a title="Configuring Psi for Google Talk" href="http://support.google.com/talk/answer/24074/" target="_blank"&gt;این مطلب&lt;/a&gt; استفاده کردم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ویرایش:&lt;/p&gt;
+
+&lt;h3 style="text-align:justify;"&gt;حل مشکل استفاده از NetworkManager
+
+&lt;/h3&gt;&lt;p&gt;این مشکل چند روزی وقتم رو گرفت. ولی تنها کاری که باید بکنین، زدن این دستور تو ترمیناله:&lt;/p&gt;
+&lt;p dir="ltr"&gt;sudo systemctl enable NetworkManager.service&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>networkmanager</category><category>nm</category><category>ntfs</category><category>psi</category><category>گنو/لینوکس</category><category>گوگل تاک</category><category>xinitrc</category><category>آرچ</category><category>ایمکس</category><guid>http://alinuxgeek.github.com/posts/20121115chnd-khr-bd-z-nsb-arch.html</guid><pubDate>Thu, 15 Nov 2012 20:02:47 GMT</pubDate></item><item><title>آرچ و کانفیگ جدید اوپن‌باکس</title><link>http://alinuxgeek.github.com/posts/20121109arch-w-khnfyg-jdyd-wpnbkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;چند روز قبل، دیگه اوبونتو کلافم کرد و خسته شدم از اینکه ندونم چی به چیه. پس مستقیم آرچ رو زدم به فلش و بایوس رو ادیت کردم که از فلش هم بوت کنه. بعد تو دو روز همه چیز کانفیگ شد و الان خیلی بیشتر از قبل میدونم کامپیوترم چطور کار میکنه و چی به چیه. مشکلاتی هم که پیش اومدن، باعث شدن چیزای جدیدی یاد بگیرم. مثلا، الان میدونم که اگه بخوام از اوپن‌باکس (و نه یونیتی) از HDMI استفاده کنم، میتونم از lxrandr استفاده کنم (با تشکر از توسعه‌دهنده‌های باحال lxde ;) ) و برای حل مشکل صدای HDMI هم شاید &lt;a title="Setting up HDMI audio output in Linux" href="http://ianmarmour.com/2012/01/22/setting-up-hdmi-audio-output-linux/" target="_blank"&gt;این مطلب&lt;/a&gt; به درد بخوره. یا مثلا میدونم که اگه صدای کامپیوتر با یوزرهای غیر از روت کار نکنه، باید به گروه audio اضافشون کنم. البته بعضی مشکلات هم هستن که هنوز نتونستم حل کنم. مثل read-only بودن پارتیشن‌های ntfs (از زمان جاهلیت ویندوزی بودن موندن، ولی فایل‌های مهم زیادی توشون هستن) (&lt;strong&gt;حل شد&lt;/strong&gt; ;) ).&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;اوپن باکس رو هم میخواستم از کانفیگ قبلیم استفاده کنم، ولی بعد دیدم دیگه خوشم نمیاد ازش. پس دوباره کانفیگ کردم و این‌بار به نظرم خیلی بهتره. ابزار استفاده شده هم wbar برای بار سمت راست، tint2 به جای fbpanel بالای صفحه، conky برای اطلاعات کامپیوتر، feh برای ست کردن بک‌گراند و xfce4-xkb-plugin برای سویچ بین زبان‌های کیبورد. والپیپر رو یادم نیست از کجا آوردم.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;&lt;a href="http://alinuxgeek.files.wordpress.com/2012/11/arch-openbox-11.jpg"&gt;&lt;img class="aligncenter size-full wp-image-996" title="arch-openbox-1" alt="" src="http://alinuxgeek.files.wordpress.com/2012/11/arch-openbox-11.jpg" height="360" width="640"&gt;&lt;/a&gt;در آخر پیشنهاد میکنم حتما حداقل آرچ رو امتحان کنین. بعدش دیگه نمیتونین ازش دست بردارین. اینکه همه چیز دست خودتون باشه، واقعا حس خوبیه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پی‌نوشت:
+
+مشکل read-only بودن پارتیشن‌های ntfs رو با نصب بسته‌ی ntfs-3g حل کردم ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>گنو/لینوکس</category><category>آرچ</category><category>اوپن باکس</category><category>دسکشات</category><category>شخصی</category><guid>http://alinuxgeek.github.com/posts/20121109arch-w-khnfyg-jdyd-wpnbkhs.html</guid><pubDate>Fri, 09 Nov 2012 17:11:55 GMT</pubDate></item></channel></rss>

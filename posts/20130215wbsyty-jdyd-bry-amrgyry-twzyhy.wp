@@ -1,0 +1,62 @@
+<html><body><p style="text-align:justify;">احتمالا قبلا با سایت DistroWatch مواجه شدین. این سایت علاوه بر ارائه اطلاعات درمورد توزیع‌های مختلف (لینوکس و BSD)، آماری هم براساس کلیک کاربرها روی لینک توزیع‌ها میده.
+امروز، داشتم فیدها رو چک میکردم که به یه مطلب از <a title="LXer Linux News" href="http://lxer.com" target="_blank">LXer</a> رسیدم. سایت جدیدی برای ارائه آمار توزیع‌های لینوکس و BSD به نام <a title="DistroRank" href="http://distrorank.com/" target="_blank">DistroRank</a>.
+
+این سایت براساس گفته خودش، به توزیع خودش امتیاز اضافی نمیده و حتی نگفته از چی استفاده میکنه. آمار هم براساس چهار چیز هست:</p>
+
+<p style="text-align:justify;">۱. تعداد نتایج چند موتور جستحوی مختلف
+
+۲. تعداد مقاله‌ها و اخبار درمورد توزیع
+
+۳. درصد استفاده از توزیع در سرورهایی که گزارش دادن
+
+۴. درصد استفاده از توزیع توسط کاربرهای دسکتاپی که گزارش دادن</p>
+
+<p style="text-align:justify;">از منابع مورد استفاده میشه به <a title="Google" href="http://www.google.com" target="_blank">گوگل</a>، <a title="Bing" href="http://bing.com" target="_blank">بینگ</a>، <a title="Netcraft" href="http://news.netcraft.com/" target="_blank">Netcraft</a> (یه وبلاگ که احتمالا مال صاحب این سایت هست) و آمار کاربران مراجعه‌کننده به خود <a title="DistroRank" href="http://distrorank.com/" target="_blank">DistroRank</a> اشاره کرد.</p>
+
+<p style="text-align:justify;">با یه نگاه به آمار این سایت میشه تفاوتش رو با سایت DistroWatch دید. آمار DistroRank اینطور هستن:</p>
+
+<p style="text-align:justify;">۱. اوبونتو
+
+۲. مینت
+
+۳. ردهت
+
+۴. آرچ
+
+۵. دبین
+
+۶. فدورا
+
+۷. جنتو
+
+۸. PCLinuxOS
+
+۹. پاپی
+
+۱۰. Fruglware</p>
+
+<p style="text-align:justify;">درحالی که آمار DistroWatch میگه:</p>
+
+<p style="text-align:justify;">۱. مینت
+
+۲. مگیا
+
+۳. اوبونتو
+
+۴. فدورا
+
+۵. اوپن‌سوزه
+
+۶. دبین
+
+۷. PCLinuxOS
+
+۸. آرچ
+
+۹. Snowlinux
+
+۱۰. Zorin</p>
+
+<p style="text-align:justify;">تفاوت زیادی دارن با هم. برای مثال Frugalware براساس آمار DistroRank رتبه ۱۰ هست، درحالی که تو DistroWatch‏، ۵۹ هست.
+
+DistroRank اشتباهات کمی نداره. مثلا ما هممون میدونیم که مطمئنا Slackware از توزیع Frugalware خیلی پرطرفدارتره، ولی آمار این سایت اینطور نمیگه. به هر حال خوشحالم که سایت جدیدی برای ارائه آمار به وجود اومده.</p></body></html>

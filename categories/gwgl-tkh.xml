@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>نوشته‌های یک گیک (گوگل تاک)</title><link>http://alinuxgeek.github.com</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Wed, 12 Jun 2013 23:51:59 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>چند کار بعد از نصب آرچ</title><link>http://alinuxgeek.github.com/posts/20121115chnd-khr-bd-z-nsb-arch.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;قبول میکنم عنوان کمی گنگه! چون هرچی باشه آرچ از همون لحظه که نصب میشه هزار کار داره که انجام بشه. ولی اینایی که میخوام بنویسم برای بعد از نصب و کانفیگ دسکتاپ و کارهای اولیه هست. (میشه گفت یه نوت برای آینده هست)
+&lt;/p&gt;&lt;h4&gt;نصب ntfs-3g&lt;/h4&gt;
+&lt;p&gt;توضیح خاصی نداره. برای مونت کردن پارتیشن‌های ntfs باید نصب باشه.&lt;/p&gt;
+&lt;h4&gt;حل مشکل دیر لود شدن ایمکس&lt;/h4&gt;
+
+&lt;p&gt;بعد از کمی جستجو درمورد این مشکل، فهمیدم که مشکل از فایل /etc/hosts هست. باید این سطر رو بهش اضافه میکردم:&lt;/p&gt;
+&lt;p&gt;127.0.0.1       HOSTNAME              HOSTNAME&lt;/p&gt;
+&lt;p&gt;که به جای هر دو HOSTNAME باید اسم کامپیوترتون رو بذارین. اگه مثلا خودتون سیستم رو کانفیگ نکردین و نمیدونین اسم کامپیوتر چیه، از دستور hostname استفاده بکنین.&lt;/p&gt;
+&lt;h4&gt;درست کردن ~/.xinitrc برای باز کردن دسکتاپی که من میخوام، نه اونی که از قبل تایین شده&lt;/h4&gt;
+
+&lt;p&gt;برای این کار، توی این فایل بنویسین:&lt;/p&gt;
+&lt;p dir="ltr"&gt;if [ $# -eq 0 ]; then
+
+exec openbox-session
+
+else
+
+exec "$1"
+
+fi&lt;/p&gt;
+
+&lt;p&gt;که البته میتونین به جای openbox-session از هر دسکتاپی که بخواین، به عنوان دسکتاپ پیش‌فرض استفاده کنین.&lt;/p&gt;
+&lt;h3 style="text-align:justify;"&gt;Psi برای استفاده از گوگل تاک
+
+&lt;/h3&gt;&lt;p style="text-align:justify;"&gt;بعد از مدت‌ها تلاش برای استفاده از گوگل تاک توی پیجین، دیگه ناامید شدم و رفتم سمت Psi. برای یادگرفتنش هم از &lt;a title="Configuring Psi for Google Talk" href="http://support.google.com/talk/answer/24074/" target="_blank"&gt;این مطلب&lt;/a&gt; استفاده کردم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ویرایش:&lt;/p&gt;
+
+&lt;h3 style="text-align:justify;"&gt;حل مشکل استفاده از NetworkManager
+
+&lt;/h3&gt;&lt;p&gt;این مشکل چند روزی وقتم رو گرفت. ولی تنها کاری که باید بکنین، زدن این دستور تو ترمیناله:&lt;/p&gt;
+&lt;p dir="ltr"&gt;sudo systemctl enable NetworkManager.service&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>networkmanager</category><category>nm</category><category>ntfs</category><category>psi</category><category>گنو/لینوکس</category><category>گوگل تاک</category><category>xinitrc</category><category>آرچ</category><category>ایمکس</category><guid>http://alinuxgeek.github.com/posts/20121115chnd-khr-bd-z-nsb-arch.html</guid><pubDate>Thu, 15 Nov 2012 20:02:47 GMT</pubDate></item></channel></rss>
