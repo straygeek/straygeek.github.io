@@ -1,0 +1,8 @@
+<html><body><p style="text-align:justify;">یه مدت بود که میخواستم به zsh مهاجرت کنم. چون بش قابلیت کامل کردن خوبی نداره و معمولا فقط دایرکتوری‌ها رو میاره! ولی الان، با کمک <a href="http://shahinism.com/" target="_blank">شاهین</a> دارم از zsh استفاده میکنم. قابلیت‌های خوبی داره. مخصوصا من قابلیت کامل کردن آرگومنت‌ها رو دوست دارم. به پیشنهاد شاهین، از oh-my-zsh استفاده میکنم. کل bashrcم رو هم کپی کردم به zsh و مشکلی ندارم. البته با PS1 مشکل داشتم که اونو هم به لطف شاهین حل کردم. الان PS1م اینه:</p>
+<p style="text-align:justify;" dir="ltr">%n@%M %* %~ $</p>
+
+<p style="text-align:justify;">توی بش این بود:</p>
+
+<p style="text-align:justify;" dir="ltr">\u@\h `date +%X`  \W $</p>
+
+<p style="text-align:justify;">البته هنوز برای اسکریپت‌ها از bash استفاده میکنم.</p></body></html>

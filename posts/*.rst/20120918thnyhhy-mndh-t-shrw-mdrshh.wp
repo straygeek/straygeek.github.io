@@ -1,0 +1,16 @@
+<html><body><p style="text-align:justify;">هاها! ایده باحالیه! این اسکریپت میاد ثانیه‌هایی رو که تا اول مهر سال ۱۳۹۱ ساعت ۸ صبح مونده، حساب میکنه. روش کارش هم خیلی سادست!</p>
+<p dir="ltr">#! /bin/bash</p>
+
+<p dir="ltr">theday="`date -d "Sat Sep 22 08:00:00 2012" "+%s"`"</p>
+
+<p dir="ltr">while :; do
+
+echo -en "\r`echo $theday - \`date '+%s'\` | bc`"
+
+done</p>
+
+<p style="text-align:justify;">اول میاد حساب میکنه از 1970-01-01 00:00:00 تا شروع مدرسه‌ها چند ثانیه هست. بعد میاد از همون وقت تا الان رو حساب میکنه که باز ببینه چند ثانیه هستن. بعد با عدد قبلی منها میشن و نتیجه میشه ثانیه‌های مونده تا شروع مدرسه‌ها!</p>
+
+<p style="text-align:justify;">ادیت:</p>
+
+<p style="text-align:justify;">میتونین از <a title="Seconds until school" href="http://persiatut.com/cgi-bin/secondsuntilschool.cgi" target="_blank">این لینک</a> ببینین چند ثانیه مونده تا شروع مدرسه‌ها. (البته به صورت موقت کار میکنه)</p></body></html>

@@ -1,0 +1,84 @@
+<html><body><p style="text-align:justify;">اگه مطالب منو توی <a href="http://persiatut.com" target="_blank">پرشیاتوت</a> دنبال کرده باشین، احتمالا میدونین که من اسکریپت‌های خودم رو که بیشتر از بقیه استفاده میکنم، میریزم به دایرکتوری ~/.commands . الان میخوام براتون بعضی از این اسکریپت‌ها رو بگم که چیکار میکنن.</p>
+<p style="text-align:justify;">battery</p>
+
+<p style="text-align:justify;">همونطور که از اسمش معلومه، درصد باتری رو میگه.</p>
+
+<p style="text-align:justify;">calc</p>
+
+<p style="text-align:justify;">ماشین حساب پایتونیم که همیشه به bc ترجیحش میدم!</p>
+
+<p style="text-align:justify;">checkhosts</p>
+
+<p style="text-align:justify;">یکی از روش‌های هک اینه که از فایل hosts مثلا صفحه فیس بوک رو به یه صفحه تقلبی میبرن و رمز رو میگیرن. با این اسکریپت من چک میکنم که فایل /etc/hosts تغییر کرده یا نه.</p>
+
+<p style="text-align:justify;">complsound</p>
+
+<p style="text-align:justify;">این اسکریپت که در واقع میتونستم یه alias توی bashrc هم بکنمش، میاد این فایل رو با mplayer اجرا میکنه:</p>
+
+<p style="text-align:justify;" dir="ltr">/usr/share/sounds/freedesktop/stereo/complete.oga</p>
+
+<p style="text-align:justify;">درواقع این یه صدای دینگ هست.</p>
+
+<p style="text-align:justify;">converttoutf8</p>
+
+<p style="text-align:justify;">از این اسکریپت برای تبدیل زیرنویس‌های فارسی به utf-8 استفاده میکنم.</p>
+
+<p style="text-align:justify;">cpusage</p>
+
+<p style="text-align:justify;">مقدار استفاده از cpu رو نشون میده.</p>
+
+<p style="text-align:justify;">cputemp</p>
+
+<p style="text-align:justify;">گرمای cpu رو مینویسه.</p>
+
+<p style="text-align:justify;">dllist</p>
+
+<p style="text-align:justify;">لیست دانلودهام رو مینویسه.</p>
+
+<p style="text-align:justify;">dlmaker</p>
+
+<p style="text-align:justify;">دانلودهام رو مرتب میکنه.</p>
+
+<p style="text-align:justify;">downloader</p>
+
+<p style="text-align:justify;">دانلودهام رو شروع میکنه.</p>
+
+<p style="text-align:justify;">enabletouchpad</p>
+
+<p style="text-align:justify;">این مال موقعی بود که تو فدورا بودم. گذاشته بودمش به استارت‌آپ که تاچ‌پد رو فعال بکنه.</p>
+
+<p style="text-align:justify;">filter</p>
+
+<p style="text-align:justify;">سایت‌ها رو فیلتر میکنه (نه اینکه فیلترینگ خیلی کمه!) از طریق فایل /etc/hosts</p>
+
+<p style="text-align:justify;">finder</p>
+
+<p style="text-align:justify;">بین کامندهام سرچ میکنه.</p>
+
+<p style="text-align:justify;">fontconfig</p>
+
+<p style="text-align:justify;">وقتی یه فونت به ~/.fonts اضافه میکنم، کانفیگش میکنه.</p>
+
+<p style="text-align:justify;">killdler</p>
+
+<p style="text-align:justify;">اسکریپت downloader رو متوقف میکنه. البته با Ctrl+C هم میشه، ولی برای وقت‌هایی که بخوام توی یه اسکریپت دانلودام رو قطع بکنم، از این استفاده میکنم.</p>
+
+<p style="text-align:justify;">killer</p>
+
+<p style="text-align:justify;">براساس اسم پروسس، بینشون سرچ میکنه و kill میکنتشون.</p>
+
+<p style="text-align:justify;">morethan0cpusage</p>
+
+<p style="text-align:justify;">پروسس‌هایی که بیشتر از 0 از cpu استفاده میکنن رو لیست میکنه.</p>
+
+<p style="text-align:justify;">ogv2avi</p>
+
+<p style="text-align:justify;">فرمت ogv رو به avi تبدیل میکنه.</p>
+
+<p style="text-align:justify;">osfinder</p>
+
+<p style="text-align:justify;">برنامه‌های اوپن سورس یه دایرکتوری رو لیست میکنه.</p>
+
+<p style="text-align:justify;">rbp</p>
+
+<p style="text-align:justify;">وقتی یه پروسس بسته شد، این میفهمه و یه پروسس دیگه (که هر دو رو بهش داده بودیم) رو اجرا میکنه.</p></body></html>

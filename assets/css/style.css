@@ -54,7 +54,7 @@ div.entry-content .alignright{float:right;margin:0.5em 0 0.5em 1em;}
 div.entry-content .center,div.entry-content .aligncenter{display:block;margin:1em auto;}
 div.entry-content .clearer,div.entry-content .entry-edit{clear:both;width:99%;}
 div.entry-content .content-column{width:40%;}
-div.entry-content .more-link{font-size:95%;font-weight:700;text-transform:uppercase;}
+div.entry-content .more-link{font-size:95%;font-weight:700;}
 div.entry-content a:hover img.center,div.entry-content a:hover img.aligncenter,div.entry-content a:hover img.alignright,div.entry-content a:hover img.alignleft{border:1px solid #2c384d;}
 div.entry-content blockquote blockquote,div.comments ol.commentlist blockquote blockquote{border-left:5px solid #ccd0d6;font-size:0.9em;padding:0 1em;}
 div.entry-content blockquote,div.comments ol.commentlist blockquote{background:#ebedef;color:#4d5663;padding:0.1em 1em;}
@@ -108,7 +108,7 @@ div.formcontainer,p#mustlogin{margin:0 0 1em 1.5em;}
 div.hentry div.archive-meta{font-style:italic;margin:0.5em 0 2em 2em;}
 div.hentry div.entry-meta{background:#f6f7f8;border-bottom:1px solid #ccd0d6;border-top:1px solid #ccd0d6;color:#677284;font-size:0.9em;margin:1em 0 5em;padding:0.2em 0.5em;text-align:center;clear:both;}
 div.hentry div.entry-meta span.meta-sep{padding:0 0 0 0.3em;}
-div.hfeed .entry-title{font-size:1.6em;font-weight:400;line-height:133%;margin:0 0 -0.3em;text-transform:uppercase;}
+div.hfeed .entry-title{margin:0 0 -0.3em;line-height:133%;} /*font-size:1.6em;font-weight:400;text-transform:uppercase;*/
 div.hfeed .page-title{color:#4d5663;font-size:1.7em;font-weight:400;line-height:133%;margin:2em 0 0;}
 div.hfeed .page-title span.page-subtitle{color:#7a818a;font-size:0.8em;padding-left:0.2em;}
 div.hfeed div#post-0 input#s{width:50%;}
@@ -137,3 +137,6 @@ div.sidebar ul li#search input#s{width:7em;}
 div.sidebar ul li.entry-interact ul li.comment-link a{background:url(images/comments.png) no-repeat left center;padding:0 0 0 15px;}
 div.sidebar ul li.entry-interact ul li.trackback-link a{background:url(images/trackbacks.png) no-repeat left center;padding:0 0 0 15px;}
 div.sidebar ul li.widget_text div.textwidget p{margin:0 0 0.5em;}
+
+pre.code, table.codehilitetable{direction:ltr;text-align:left;background:999999;color:white;margin-left:10px}
+.post{text-align:justify;}
