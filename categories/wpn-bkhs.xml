@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>نوشته‌های یک گیک (اوپن باکس)</title><link>http://straygeek.github.io</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Fri, 14 Jun 2013 01:46:24 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>شرتکات فوکوس روی پنجره ایمکس</title><link>http://straygeek.github.io/posts/20130529shrtkht-bl-fwkhws-rwy-pnjrh-ymkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p&gt;خوب، امروز &lt;a href="/posts/emacs-as-a-terminal-emulator.html"&gt;پست شاهین&lt;/a&gt; در مورد استفاده از ایمکس به عنوان ترمینال رو دیدم. یه مدت خودم هم این فکر رو تو سرم داشتم، ولی تنبلی نمیذاره کاری بکنیم ;)‏&lt;/p&gt;
+&lt;p&gt;خوب، این پست رو میخونم. همه جا تا multi-term خوب و خوش پیش میره. ولی وقتی به تنظیمات i3 میرسم، یه چیز جالب یادم میفته: دسکتاپ من i3 نیست! چاره چیه؟&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;باید پنجره ایمکس رو طوری بکنم که با یه شرتکات بیاد و بره. اوپن باکس به هیچ وجه تو مدیریت پنجره‌ها از طریق خط فرمان خوب نیست. پس باید یه راه دیگه پیدا کنم. با یه سرچ، به یه ابزار داخلی X میرسم: xdotool. کمی تو راهنماش میچرخم و چیزهایی رو که لازم هستن پیدا میکنم. چیزایی مثل مینیمایز کردن، بالا آوردن و گرفتن آی‌دی پنجره. خوب، فقط مونده این‌ها رو ترکیب بکنیم. یه اسکریپت کوتاه می‌نویسیم:&lt;/p&gt;
+&lt;p dir="ltr"&gt;‎#! /bin/bash&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;id="$(xdotool search --name --limit 1 emacs@$HOST)"‎&lt;br&gt;
+
+active="$(xdotool getactivewindow)"‎&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;if [ "$id" = "" ]; then&lt;br&gt;
+
+zenity --error --title "Error" --text "No emacs is running\!"‎&lt;br&gt;
+
+exit 1&lt;br&gt;
+
+fi&lt;/p&gt;
+
+&lt;p dir="ltr"&gt;if [ $id != "$active" ]; then&lt;br&gt;
+
+xdotool windowmap $id&lt;br&gt;
+
+xdotool windowfocus $id&lt;br&gt;
+
+else&lt;br&gt;
+
+xdotool windowminimize $id&lt;br&gt;
+
+fi&lt;/p&gt;
+
+&lt;p&gt;اول بگم که اگه بخواین این رو کپی کنین، یه سری کاراکتر برای درست نشون دادن این کد گذاشتم. پس اگه بخواین کپیش کنین، اول چک کنین ببینین کاراکتر اضافی دارین یا نه.&lt;br&gt;
+
+خوب، میشه گفت هرکسی با یه نگاه میتونه بگه این اسکریپت چیکار میکنه. ولی به هر حال توضیح میدم. اولین سطر که میگیم با بش اجرا کن. بعد، آی‌دی پنجره‌ای رو که اسمش emacs@HOSTNAME هست، میگیرم (HOSTNAME همون اسم کامپیوتره منه) که همون پنجره ایمکسه و میذارم تو متغیر id. بعد، آی‌دی پنجره فعال رو میگیرم و اونو هم میندازم تو متغیر active. حالا چک میکنم ببینم اصلا پنجره ایمکسی هست یا نه. اگه نباشه با zenity یه ارور میدم و میزنم بیرون. حالا یه if دیگه میذارم که ببینم پنجره فعال همون ایمکسه یا نه. اگه باشه، مینیمایزش میکنم و اگه نباشه، میارمش بالا و روش فوکوس میکنم.&lt;br&gt;
+
+خوب، حالا این رو تو یه فایل میریزم و یه شرتکات دلخواه براش تعیین میکنم و تمام.&lt;br&gt;
+
+ولی من شخصا زیاد از ترمینال ایمکس خوشم نیومد. بعضی شرتکات‌ها رو ساپورت نمیکنه (که نباید هم بکنه. به هر حال شرتکات‌های خودشه دیگه!) و بعضی کارهای دیگه هم نمیشن.&lt;br&gt;
+
+ولی به هر حال این کد رو نگه میدارم تا شاید یه روز برای برنامه دیگه‌ای، مثل GoldenDict، ازش استفاده بکنم ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>چرا عاشق لینوکس هستم</category><category>گنو/لینوکس</category><category>اوپن باکس</category><category>ایمکس</category><category>ایمکس</category><category>اسکریپت‌ها</category><guid>http://straygeek.github.io/posts/20130529shrtkht-bl-fwkhws-rwy-pnjrh-ymkhs.html</guid><pubDate>Wed, 29 May 2013 14:40:18 GMT</pubDate></item><item><title>آرچ و کانفیگ جدید اوپن‌باکس</title><link>http://straygeek.github.io/posts/20121109arch-w-khnfyg-jdyd-wpnbkhs.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;چند روز قبل، دیگه اوبونتو کلافم کرد و خسته شدم از اینکه ندونم چی به چیه. پس مستقیم آرچ رو زدم به فلش و بایوس رو ادیت کردم که از فلش هم بوت کنه. بعد تو دو روز همه چیز کانفیگ شد و الان خیلی بیشتر از قبل میدونم کامپیوترم چطور کار میکنه و چی به چیه. مشکلاتی هم که پیش اومدن، باعث شدن چیزای جدیدی یاد بگیرم. مثلا، الان میدونم که اگه بخوام از اوپن‌باکس (و نه یونیتی) از HDMI استفاده کنم، میتونم از lxrandr استفاده کنم (با تشکر از توسعه‌دهنده‌های باحال lxde ;) ) و برای حل مشکل صدای HDMI هم شاید &lt;a title="Setting up HDMI audio output in Linux" href="http://ianmarmour.com/2012/01/22/setting-up-hdmi-audio-output-linux/" target="_blank"&gt;این مطلب&lt;/a&gt; به درد بخوره. یا مثلا میدونم که اگه صدای کامپیوتر با یوزرهای غیر از روت کار نکنه، باید به گروه audio اضافشون کنم. البته بعضی مشکلات هم هستن که هنوز نتونستم حل کنم. مثل read-only بودن پارتیشن‌های ntfs (از زمان جاهلیت ویندوزی بودن موندن، ولی فایل‌های مهم زیادی توشون هستن) (&lt;strong&gt;حل شد&lt;/strong&gt; ;) ).&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;اوپن باکس رو هم میخواستم از کانفیگ قبلیم استفاده کنم، ولی بعد دیدم دیگه خوشم نمیاد ازش. پس دوباره کانفیگ کردم و این‌بار به نظرم خیلی بهتره. ابزار استفاده شده هم wbar برای بار سمت راست، tint2 به جای fbpanel بالای صفحه، conky برای اطلاعات کامپیوتر، feh برای ست کردن بک‌گراند و xfce4-xkb-plugin برای سویچ بین زبان‌های کیبورد. والپیپر رو یادم نیست از کجا آوردم.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;&lt;a href="http://alinuxgeek.files.wordpress.com/2012/11/arch-openbox-11.jpg"&gt;&lt;img class="aligncenter size-full wp-image-996" title="arch-openbox-1" alt="" src="http://alinuxgeek.files.wordpress.com/2012/11/arch-openbox-11.jpg" height="360" width="640"&gt;&lt;/a&gt;در آخر پیشنهاد میکنم حتما حداقل آرچ رو امتحان کنین. بعدش دیگه نمیتونین ازش دست بردارین. اینکه همه چیز دست خودتون باشه، واقعا حس خوبیه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پی‌نوشت:
+
+مشکل read-only بودن پارتیشن‌های ntfs رو با نصب بسته‌ی ntfs-3g حل کردم ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>گنو/لینوکس</category><category>آرچ</category><category>اوپن باکس</category><category>دسکشات</category><category>شخصی</category><guid>http://straygeek.github.io/posts/20121109arch-w-khnfyg-jdyd-wpnbkhs.html</guid><pubDate>Fri, 09 Nov 2012 17:11:55 GMT</pubDate></item></channel></rss>

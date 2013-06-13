@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>نوشته‌های یک گیک (لینوکس)</title><link>http://straygeek.github.io</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Fri, 14 Jun 2013 01:46:24 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>مهاجرت به وبلاگ ایستا</title><link>http://straygeek.github.io/posts/nikola.html</link><description>&lt;!-- link: --&gt;
+&lt;!-- description: --&gt;
+&lt;!-- tags: خبر,لینوکس,عمومی,گنو/لینوکس --&gt;
+&lt;!-- date: 2013/06/13 01:31:52 --&gt;
+&lt;!-- title: مهاجرت به وبلاگ ایستا --&gt;
+&lt;!-- slug: nikola --&gt;
+&lt;p&gt;مدتی بود که می‌خواستم از شر فیلتر بودن وبلاگم خلاص بشم (نه به خاطر خواننده‌ها، که به خاطر خودم ‎:D)، ولی هیچ سرویس وبلاگ داینامیکی راضیم نمیکرد و قرار هم نبود هاست بخرم. ولی بعد، &lt;a class="reference external" href="http://shahinism.github.io/posts/from-wordpress-to-nikola.html"&gt;شاهین به سرویس وبلاگ استاتیکی کوچ کرد&lt;/a&gt; و من فهمیدم این بهترین راهه. شاهین از نیکولا استفاده کرده بود، ولی من فکر کردم شاید چیز بهتری هم باشه. کلی سیستم بلاگینگ استاتیک امتحان کردم، از جمله &lt;a class="reference external" href="http://octopress.org"&gt;Octopress&lt;/a&gt;،‏ &lt;a class="reference external" href="http://docs.getpelican.com/"&gt;Pelican&lt;/a&gt;،‏ &lt;a class="reference external" href="http://www.blosxom.com/"&gt;Blosxom&lt;/a&gt; و ... . ولی غیر از نیکولا و پلیکان، تغریبا هیچکدوم از UTF-8 پشتیبانی درست حسابی نمیکردن و فقط برای انگلیسی و زبان‌هایی که فقط از حروف انگلیسی استفاده میکنن، مناسب بودن. پلیکان هم برای خودش دردسری داشت. پس رفتم سراغ همون نیکولا.&lt;/p&gt;
+&lt;p&gt;چیز زیادی برای گفتن نیست. غیر از اینکه من طراح وبسایت نیستم و به غیر از عوض کردن چند تا کد کوچیک CSS و HTML، کار زیادی از دستم بر نمیومد. واسه همین قالبم فوق‌العاده نیست و زشته هنوز. ولی خوب، کار میکنه و قابل تحمله.&lt;/p&gt;
+&lt;p&gt;پست‌های قبلیم یه سری مشکلاتی دارن که بزرگترینشون آدرسشونه. شاید حوصله بکنم بشینم آدرس همه پنجاه و پنج پست قبلیم رو درست کنم، ولی فعلا از این خبرا نیست. ;) تصاویری که روی وردپرس آپلود کرده بودم هم فیلترن و جای دیگه‌ای آپلودشون نکردم هنوز.&lt;/p&gt;
+&lt;p&gt;بعد از قابل استفاده شدن وبلاگ، رفتم تو گیت‌هاب یه صفحه براش بسازم. ولی alinuxgeek گرفته شده بود. پس آدرس جدید وبلاگ &lt;a class="reference external" href="/posts/straygeek.github.io"&gt;straygeek.github.io&lt;/a&gt; هست :)&lt;/p&gt;</description><category>خبر</category><category>لینوکس</category><category>عمومی</category><category>گنو/لینوکس</category><guid>http://straygeek.github.io/posts/nikola.html</guid><pubDate>Thu, 13 Jun 2013 01:31:52 GMT</pubDate></item><item><title>وبسایتی جدید برای آمارگیری توزیع‌های لینوکس و BSD</title><link>http://straygeek.github.io/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;احتمالا قبلا با سایت DistroWatch مواجه شدین. این سایت علاوه بر ارائه اطلاعات درمورد توزیع‌های مختلف (لینوکس و BSD)، آماری هم براساس کلیک کاربرها روی لینک توزیع‌ها میده.
+امروز، داشتم فیدها رو چک میکردم که به یه مطلب از &lt;a title="LXer Linux News" href="http://lxer.com" target="_blank"&gt;LXer&lt;/a&gt; رسیدم. سایت جدیدی برای ارائه آمار توزیع‌های لینوکس و BSD به نام &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;این سایت براساس گفته خودش، به توزیع خودش امتیاز اضافی نمیده و حتی نگفته از چی استفاده میکنه. آمار هم براساس چهار چیز هست:&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;۱. تعداد نتایج چند موتور جستحوی مختلف
+
+۲. تعداد مقاله‌ها و اخبار درمورد توزیع
+
+۳. درصد استفاده از توزیع در سرورهایی که گزارش دادن
+
+۴. درصد استفاده از توزیع توسط کاربرهای دسکتاپی که گزارش دادن&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;از منابع مورد استفاده میشه به &lt;a title="Google" href="http://www.google.com" target="_blank"&gt;گوگل&lt;/a&gt;، &lt;a title="Bing" href="http://bing.com" target="_blank"&gt;بینگ&lt;/a&gt;، &lt;a title="Netcraft" href="http://news.netcraft.com/" target="_blank"&gt;Netcraft&lt;/a&gt; (یه وبلاگ که احتمالا مال صاحب این سایت هست) و آمار کاربران مراجعه‌کننده به خود &lt;a title="DistroRank" href="http://distrorank.com/" target="_blank"&gt;DistroRank&lt;/a&gt; اشاره کرد.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;با یه نگاه به آمار این سایت میشه تفاوتش رو با سایت DistroWatch دید. آمار DistroRank اینطور هستن:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. اوبونتو
+
+۲. مینت
+
+۳. ردهت
+
+۴. آرچ
+
+۵. دبین
+
+۶. فدورا
+
+۷. جنتو
+
+۸. PCLinuxOS
+
+۹. پاپی
+
+۱۰. Fruglware&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;درحالی که آمار DistroWatch میگه:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;۱. مینت
+
+۲. مگیا
+
+۳. اوبونتو
+
+۴. فدورا
+
+۵. اوپن‌سوزه
+
+۶. دبین
+
+۷. PCLinuxOS
+
+۸. آرچ
+
+۹. Snowlinux
+
+۱۰. Zorin&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;تفاوت زیادی دارن با هم. برای مثال Frugalware براساس آمار DistroRank رتبه ۱۰ هست، درحالی که تو DistroWatch‏، ۵۹ هست.
+
+DistroRank اشتباهات کمی نداره. مثلا ما هممون میدونیم که مطمئنا Slackware از توزیع Frugalware خیلی پرطرفدارتره، ولی آمار این سایت اینطور نمیگه. به هر حال خوشحالم که سایت جدیدی برای ارائه آمار به وجود اومده.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>distrorank</category><category>DistroWatch</category><category>لینوکس</category><category>گنو/لینوکس</category><category>آمار</category><category>توزیع</category><guid>http://straygeek.github.io/posts/20130215wbsyty-jdyd-bry-amrgyry-twzyhy.html</guid><pubDate>Fri, 15 Feb 2013 11:53:15 GMT</pubDate></item><item><title>ترجمه: من بچه‌هام رو با خط فرمان به بار آوردم... و اونا عاشقشن</title><link>http://straygeek.github.io/posts/20130109trjmh-mn-bchhhm-rw-b-kht-frmn-bh-br-a.html</link><description>&lt;p&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;امروز داشتم فید ریدرم رو چک میکردم که &lt;a title="من بچه‌هام رو با خط فرمان به بار آوردم... و اونا عاشقشن" href="http://lifehacker.com/5974087/i-raised-my-kids-on-the-command-lineand-they-love-it" target="_blank"&gt;این پست خوب&lt;/a&gt; رو توی لایف‌هکر دیدم. حیف بود ترجمش نکنم. ببخشید اگه ترجمش زیاد خوب نشده.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;دو سال قبل، پسر سه ساله من جِیکوب (Jacob) و من اولین کامپیوتر اون رو باهمدیگه ساختیم. من روش دبین نصب کردم، ولی به هیچ وجه GUI نذاشتم. این خط فرمان بود و سرگرمی زیادی تو این دو سال با خودش آورد. صورت متعجبی از مردم میبینم وقتی که توضیح میدم پسر من از سه سالگی میتونسته به شل لینوکس لاگین بکنه. به خصوص وقتی میگم زیاد هم سخت نبود. به جای یاد دادن بالا آوردن Xbox، اون یاد گرفته که چطور بش رو باز بکنه. من اینو دوست دارم.&lt;/p&gt;
+&lt;p style="text-align:justify;"&gt;تازگیا، جیکوب (الان ۵ سالست) مدت زمان زیادی رو باهاش سپری نمیکنه. من فکر کنم اون هنوز تو مرحله‌ای نیست که محدودیت‌هاش رو رد بکنه، ولی داره خسته میشه. پس فکر کردم بهتره GUI رو به یه روش محدود شروع بکنم تا بهش اجازه بدم عکس و ویدیو از دوربین اسباب‌بازی Vtechش بگیره (اون ویدیو‌ها و عکس‌های low-res (کم پژوهش؟)ی داره که با USB1 میشه گرفتشون). جیکوب با مفهوم GUI آشنا هست، چون تو کامپیوتر Terah (احتمالا همسرشه) (گنوم ۲) و من (Xfce و xmonad) رو دیده.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پس شب قبل، اولیور (Oliver) دو ساله و من رفتیم به زیرزمین به جستجوی موس. مطمئن بودم که من یه موس PS/2 قدیمی اونجا داشتم که خوب کار میکرد. هر دو پسر بهم کمک کردن که تو اتاق بازی، سیم اون رو وصل کنیم به کامپیوتر. خیلی هیجان‌زده شدن وقتی کامپیوتر بالا اومد و چراغ قرمز زیر موس رو دیدن. خیلی سخته توضیح بدم چقدر هیجان‌زده بودن. یادمه منم موقعی که اولین موسم رو خریدم اینقدر هیجان‌زده بودم (فکر کنم یه کم سنم بالاتر بود).&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;به جیکوب کمک کردم که برای اولین بار با یوزر ریشه (root) لاگین بشه (جیکوب نوشت root، من پسورد رو زدم و شروع کردم به توضیح دادن که چرا داریم به کامپیوتر میگیم که ما یوزر ریشه هستیم). جیکوب و اولیور چند خط دستور apt-get زدن. وقتی منتظر بودیم برنامه دانلود بشه، من مجبور بودم به سوال‌های تکراری «چطور موس قراره کار بکنه؟» و «نصب یعنی چی؟» جواب بدم.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;بالاخره تموم شد و من به جیکوب گفتم بنویسه startx. من عمدا دسکتاپ نصب نکردم. اون بمونه برا بعد. جیکوب اینتر رو زد. صفحه ۵ ثانیه سیاه شد و X اومد. کلمه «هیجان‌زده» نمیتونه توضیح بده که اونا تو چه حالی بودن. اون به نوبت با موس بازی میکردن. عاشق این شده بودن که چطور آیکون سطل‌زباله، آشغال رو تو خودش نشون میداد (با Xfce شروع کردم).&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ولی اونا فقط موس رو یاد میگرفتن، و کلی چیز درمورد GUI وجود داره که برای کسی که هنوز با موس حرفه‌ای نیست، سخته. کلیدهای بستن پنجره کوچیک بودن و پنجره‌ها خیلی راحت میتونستن رو و زیر پنل‌ها و منوها برن. وقتی من نشستم و درموردش فکر کردم، دیدم این نوع طراحی GUI یه چیزی که «همیشه همونجور کار بکنه» ارائه نمیده که برای یه بچه مناسب باشه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;و اون موقع به فکرم رسید: بهترین GUI برای یه بچه xmonad (یه Tiling WM که میتونه تقریبا به طور کامل به وسیله کیبورد استفاده بشه و نیازی به موس نباشه) هست. نه دسکتاپی، و نه فایل‌منیجری. فقط یه مدیر پنجره با راه کلاسیک X. بله!&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;پس بعد از اینکه پسرا رفتن به تختشون، من xmonad رو نصب کردم. من رو اکانت جیکوب یه .xsession‎ ساده گذاشتم که یه xmonad و یه ترمینال اجرا بکنه.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;امروز، جیکوب بهم گفت که میخواد کامپیوترش عینا مثل مال من باشه. دقیقا چیزی که میخواستم! ولی وقتی اون با هیجان startx رو زد، گفت این دقیقا مثل مال من نیست. او اوه! مثل اینکه میخواست والپیپرش هم مثل مال من باشه. واو! فهمیدم که xli (؟) تو پنجره روت اجرا میشه و من باید یه خط دیگه به .xsession اضافه میکردم. شوق بیشتر!&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;جیکوب خیلی سریع تو استفاده از کلیدهای میانبر xmonad ماهر شد. Alt-Shit-C برای بستن یه پنجره. Alt-Shift-Q برای بازگشت سریع به «صفحه سیاه بزرگ».  Alt-Shift-Enter برای باز شدن یه پنجره ترمینال.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;ما thunar (فایل‌منیجر Xfce) رو اجرا کردیم و دوربین جیکوب رو وصل کردیم. اون داشت از دیدن عکس‌ها و ویدیوهای اون لذت میبرد. ولی اونوقت من لذت اصلی روز رو براش آوردم: پیشنهاد دادم که براش Tuxpaint رو نصب بکنم. این احتمالا برنامه مورد علاقش هست.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;اون بی‌صبرانه apt-get رو که 1m30s برای Tuxpaint و لایبرری‌هاش پایین میومد نگاه کرد. بعد اجراش کردیم و اون خواست که شام رو برای بازی با Tuxpaint رد بکنه، تو «کامپیوتر مخصوص خودش».&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;من برای مدت زیادی فکر میکردم چطور GUI رو شروع بکنم. توجه میکردم که بچه‌هایی که از Commodores یا TRS-80s یا DOS استفاده میکردن، خیلی بیشتر در مورد کارکرد کامپیوترشون میدونستن تا کسایی که تو همون سن از ویندوز یا مک استفاده میکردن. من نمیخواستم که پسرامون مرحله یاد گرفتن کارکرد تکنولوژی که باهاش کار میکنن رو رد بکنن. من با این راه‌حلم خوش‌حالم. اون‌ها هنوز برای اجرای برنامه‌ها از کامندها استفاده میکنن، تا وقتی که از برنامه‌های گرافیکی بیشتر از برنامه‌های تحت خط‌فرمان استفاده بکنن.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;موقع خواب، جیکوب ازم خیلی جدی پرسید:&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- بابا، من چطور Tuxpaint رو دوباره اجرا بکنم؟&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- اول لاگین بکن و بنویس startx. اونوقت میتونی از موس استفاده بکنی.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;جیکوب با سرش اشاره میکنه و با یه قیافه متفکرانه...&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- و؟&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;من ادامه میدم،&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;- تو ترمینال مینویسی tuxpaint، و اون بالا میاد.&lt;/p&gt;
+
+&lt;p style="text-align:justify;"&gt;جیکوب سرش رو برای بار دوم خیلی جدی تکون میده و این اطلاعات بسیار مهم رو به حافظه‌ی بلند‌مدتش میسپاره. بعد کمی هیجان‌زده میشه و فریاد میکشه «عالیه!»، و به خواب فرو میره.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description><category>لینوکس</category><category>چرا عاشق لینوکس هستم</category><category>کامندلاین</category><category>گنو/لینوکس</category><category>خط فرمان</category><category>عمومی</category><guid>http://straygeek.github.io/posts/20130109trjmh-mn-bchhhm-rw-b-kht-frmn-bh-br-a.html</guid><pubDate>Wed, 09 Jan 2013 09:48:36 GMT</pubDate></item></channel></rss>

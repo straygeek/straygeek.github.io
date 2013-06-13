@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <title>چند کار بعد از نصب آرچ</title>
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="../assets/css/style.css" title="blog.txt">
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="../assets/css/2c-r.css" title="blog.txt">
+    <link rel="stylesheet" type="text/css" media="print" href="../assets/css/print.css" title="blog.txt">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+            <link rel="alternate" type="application/rss+xml" title="RSS (fa)" href="../rss.xml">
+    
+    
+</head>
+<body dir="rtl">
+    <script type="text/javascript">
+        var addthis_config = { 'ui_language': 'fa' };
+    </script>
+
+<div id="wrapper">
+    <div id="container">
+        <div id="content">
+            <div id="header">
+                <h1 id="blog-title">
+                    <a href="http://straygeek.github.io" title="نوشته‌های یک گیک">نوشته‌های یک گیک</a>
+                </h1>
+		<br><hr>
+                
+                
+            </div>
+        <div class="hfeed">
+            <!--Body content-->
+            
+    <div id="post-20121115chnd-khr-bd-z-nsb-arch" class="post">
+        <h2 class="entry-title"><a href="#">چند کار بعد از نصب آرچ</a></h2>
+        <div class="entry-content thepost">
+            <p></p><p>قبول میکنم عنوان کمی گنگه! چون هرچی باشه آرچ از همون لحظه که نصب میشه هزار کار داره که انجام بشه. ولی اینایی که میخوام بنویسم برای بعد از نصب و کانفیگ دسکتاپ و کارهای اولیه هست. (میشه گفت یه نوت برای آینده هست)
+</p><h4>نصب ntfs-3g</h4>
+<p>توضیح خاصی نداره. برای مونت کردن پارتیشن‌های ntfs باید نصب باشه.</p>
+<h4>حل مشکل دیر لود شدن ایمکس</h4>
+
+<p>بعد از کمی جستجو درمورد این مشکل، فهمیدم که مشکل از فایل /etc/hosts هست. باید این سطر رو بهش اضافه میکردم:</p>
+<p>127.0.0.1       HOSTNAME              HOSTNAME</p>
+<p>که به جای هر دو HOSTNAME باید اسم کامپیوترتون رو بذارین. اگه مثلا خودتون سیستم رو کانفیگ نکردین و نمیدونین اسم کامپیوتر چیه، از دستور hostname استفاده بکنین.</p>
+<h4>درست کردن ~/.xinitrc برای باز کردن دسکتاپی که من میخوام، نه اونی که از قبل تایین شده</h4>
+
+<p>برای این کار، توی این فایل بنویسین:</p>
+<p dir="ltr">if [ $# -eq 0 ]; then
+
+exec openbox-session
+
+else
+
+exec "$1"
+
+fi</p>
+
+<p>که البته میتونین به جای openbox-session از هر دسکتاپی که بخواین، به عنوان دسکتاپ پیش‌فرض استفاده کنین.</p>
+<h3 style="text-align:justify;">Psi برای استفاده از گوگل تاک
+
+</h3><p style="text-align:justify;">بعد از مدت‌ها تلاش برای استفاده از گوگل تاک توی پیجین، دیگه ناامید شدم و رفتم سمت Psi. برای یادگرفتنش هم از <a title="Configuring Psi for Google Talk" href="http://support.google.com/talk/answer/24074/" target="_blank">این مطلب</a> استفاده کردم.</p>
+
+<p style="text-align:justify;">ویرایش:</p>
+
+<h3 style="text-align:justify;">حل مشکل استفاده از NetworkManager
+
+</h3><p>این مشکل چند روزی وقتم رو گرفت. ولی تنها کاری که باید بکنین، زدن این دستور تو ترمیناله:</p>
+<p dir="ltr">sudo systemctl enable NetworkManager.service</p>
+
+<p></p>
+        </div>
+        <div class="archive-meta">
+            ارسال شده: 2012-11-15 20:02:47<span class="meta-sep"><!--|</span>
+            <span class="meta-sep">|</span>
+            <a href="20121115chnd-khr-bd-z-nsb-arch.txt">reSt</a>
+            <span class="meta-sep">|</span>-->
+                    <a href="../categories/networkmanager.html"><span class="badge badge-info">networkmanager</span></a>
+                    <a href="../categories/nm.html"><span class="badge badge-info">nm</span></a>
+                    <a href="../categories/ntfs.html"><span class="badge badge-info">ntfs</span></a>
+                    <a href="../categories/psi.html"><span class="badge badge-info">psi</span></a>
+                    <a href="../categories/gnwlynwkhs.html"><span class="badge badge-info">گنو/لینوکس</span></a>
+                    <a href="../categories/gwgl-tkh.html"><span class="badge badge-info">گوگل تاک</span></a>
+                    <a href="../categories/xinitrc.html"><span class="badge badge-info">xinitrc</span></a>
+                    <a href="../categories/arch.html"><span class="badge badge-info">آرچ</span></a>
+                    <a href="../categories/ymkhs.html"><span class="badge badge-info">ایمکس</span></a>
+            <span class="entry-tags">
+            </span>
+        </span></div>
+    </div>
+
+
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		        var disqus_shortname = 'straygeek'; // required: replace example with your forum shortname
+
+			        /* * * DON'T EDIT BELOW THIS LINE * * */
+				        (function() {
+					            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+								            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+									            })();
+										        </script>
+											    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+											        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+												    
+
+    
+        <!-- Disqus comments
+	<br/>
+        <script type="text/javascript">
+            var disqus_url = 'http://straygeek.github.io/posts/20121115chnd-khr-bd-z-nsb-arch.html';
+            var disqus_developer = 1;
+        </script>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript" src="http://disqus.com/forums/nikolademo/embed.js"></script>
+        <noscript><a href="http://disqus.com/forums/nikolademo/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- End of Disqus comments !-->
+
+            <!--End of body content-->
+        </div><!-- .hfeed -->
+    </div><!-- #content -->
+</div><!-- #container -->
+
+<div id="primary" class="sidebar" dir="ltr">
+    <ul>
+	<li><h3><a href="../stories/about.html">ABOUT</a></h3></li>
+            <li><h3><a href="../archive.html">Archives</a></h3></li>
+            <li><h3><a href="../categories/index.html">Tags</a></h3></li>
+            <li><h3><a href="../rss.xml">RSS</a></h3></li>
+
+    	<!-- search engine
+	<li style="text-align:center">
+	<br/>
+	<form id="cse-search-box" action="http://google.com/cse">
+	<input type="hidden" name="cx" value="016434289486447386752:vexfuidzg2y" />
+	<input type="hidden" name="ie" value="UTF-8" />
+	<input type="text" name="q" size="31" />
+	<br/><input type="submit" name="sa" value="Search" />
+	</form>
+	<br/>
+	<img src="http://www.google.com/cse/images/google_custom_search_smwide.gif">
+	</li>
+	-->
+
+        <li>
+        <!-- social buttons -->
+        <li>
+            <div class="addthis_toolbox addthis_default_style" style="margin-bottom: 12px;">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+            <a class="addthis_counter addthis_bubble_style"></a>
+            </div>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+        <!-- End of social buttons -->
+        </li><li>
+    </li></ul>
+</div><!-- #primary .sidebar -->
+
+<div id="footer" dir="ltr">
+    <span id="theme-link"><a href="http://www.plaintxt.org/themes/blogtxt/" title="&lt;?php _e('blog.txt theme for WordPress', 'blogtxt' ) ?&gt;" rel="follow designer">blog.txt</a> <?php _e('theme by', 'blogtxt') ?> <span class="vcard"><a class="url fn n" href="http://scottwallick.com/" title="scottwallick.com" rel="follow designer"><span class="given-name">Scott</span><span class="additional-name"> Allan</span><span class="family-name"> Wallick</span></a></span></span>
+    <small>Contents © 2013         <a href="mailto:vapaapoika@gmail.com">علیرضا</a> - Powered by         <a href="http://nikola.ralsina.com.ar">Nikola</a></small><p>
+</p></div><!-- #footer -->
+
+</div><!-- #wrapper -->
+    
+<!-- end transmission -->
+</body></html>

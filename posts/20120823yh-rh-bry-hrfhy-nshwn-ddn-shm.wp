@@ -1,0 +1,12 @@
+<html><body><p style="text-align:justify;">اگه بخواین پیش بقیه خودتون رو حرفه‌ای نشون بدین یا درواقع "کلاس بذارین" چیکار میکنین؟ ترمینال رو باز میکنین و چند تا دستور الکی میزنین؟ یه راه باحال‌تر سراغ دارم! اول <a href="http://alinuxgeek.files.wordpress.com/2012/08/xtms.doc">این</a> و <a href="http://alinuxgeek.files.wordpress.com/2012/08/zo.doc">این</a> فایل رو دانلود و به دایرکتوری Home خودتون کپی کنین. بعد این دستور رو بزنین:</p>
+<p style="text-align:justify;" dir="ltr">bash xtms.doc</p>
+
+<p style="text-align:justify;">البته کمی از cpu استفاده میشه. ولی راه بامزه‌ایه واسه حرفه نشون دادن خودتون!
+
+برای کنسل کردن هم که خوب کافیه ترمینالی که این دستور رو توش زدین رو باز کنین Ctrl + C بزنین.
+
+بعد از زدن این کامند، دسکتاپ به این شکل میشه:</p>
+
+<p style="text-align:justify;"><a href="http://alinuxgeek.files.wordpress.com/2012/08/xtms.jpg"><img class="aligncenter size-full wp-image-108" title="xtms" src="http://alinuxgeek.files.wordpress.com/2012/08/xtms.jpg" alt="" width="640" height="360"></a></p>
+
+<p style="text-align:justify;">درضمن، دلیل doc بودن فرمت فایل‌ها هم اینه که وردپرس از gz و bz2 و zip پشتیبانی نمیکنه. گولش زدم درواقع!</p></body></html>

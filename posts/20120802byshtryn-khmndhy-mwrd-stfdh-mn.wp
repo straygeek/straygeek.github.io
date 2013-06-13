@@ -1,0 +1,32 @@
+<html><body><p style="text-align:justify;">امروز یه چیزی به ذهنم رسید. اینکه ببینم از۵۰۰ تا کامند توی هیستوری، کدومشون استفاده بیشتری داشتن؟</p>
+<p style="text-align:justify;">خوب، اول تمام تاریخچه رو میریزم به یه فایل:</p>
+
+<p style="text-align:justify;" dir="ltr">history &gt; history</p>
+
+<p style="text-align:justify;">بعد این کامند(ها) رو میزنم:</p>
+
+<p style="text-align:justify;" dir="ltr">afterpc@apcubuntu 05:10:16 PM  ~ $ cat history | awk '{ print $2 }' | sort | uniq -c | tr -s ' ' | sed "s/ //" | grep [0-9][0-9]' ' | sort | tac</p>
+
+<p style="text-align:justify;">اول بگم چی میگذره اینجا. cat، فایل history رو میخونه و میده به awk. اونم دومین کلمه که میشه همون کامندمون. بعد sort به ترتیب حروف الفبا مرتب میکنه و اونیکی میگه که هر کلمه چند بار تکرار شده. بعد tr همه اسپیس‌ها که دو بار یا بیشتر کنار هم اومدن پاک میکنه و فقط یکی میذاره و اون sed میاد اون یدونه رو هم پاک میکنه. بعد با grep دورقمی‌ها رو جدا میکنم و دوباره با sort مرتب میکنم و با tac برعکس میکنم که بیشترها بالا باشن.
+
+و نتیجه:</p>
+
+<p style="text-align:justify;" dir="ltr">79 c
+
+76 ls
+
+38 sudo
+
+23 rm
+
+21 downloader
+
+18 emacs
+
+18 cat
+
+14 echo
+
+11 man</p>
+
+<p style="text-align:justify;">واو! جالبه! c که درواقع یه alias (اسم مستعار) clear هست، بیشتر از همه استفاده شده! ls هم با سه تا تفاوت! بعدی sudo هست. بعدش rm! زیادی پاک میکنم انگار! اوه! اسکریپتی که با اون دانلودام رو شروع میکنم رتبه پنجمه! بعدش ایمکس و cat و echo. بین پونصد کامند، یازده‌تاش هم man هست. زیادی دوست دارم یاد بگیرم یا فقط سرسری یه نگاه میندازم میرم؟ :)</p></body></html>
