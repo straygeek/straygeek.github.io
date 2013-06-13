@@ -30,7 +30,7 @@ div#footer{color:#9aa1ae;font-size:0.9em;padding:6em 0 0;}
 div#globalnav,div.access,div#footer span#theme-link span.additional-name,div#footer span#theme-link span.family-name{display:none;}
 div#header a{text-decoration:none;}
 div#header div#blog-description,div#header div.archive-description{font-size:1.1em;line-height:133%;}
-div#header h1#blog-title{#ccd0d6;font-weight:normal;font-size:4em;line-height:64%;letter-spacing:1px;margin:0;text-transform:uppercase;margin-right:20px;} /*border-bottom:0.1em solid */
+div#header h1#blog-title{#ccd0d6;font-weight:normal;font-size:2.5em;line-height:64%;letter-spacing:1px;margin:0;text-transform:uppercase;margin-right:20px;} /*border-bottom:0.1em solid */
 div#wrapper .important{background:#f5f5dc url(images/important.png) no-repeat 0.5em center;border-bottom:1px solid #d0d0bb;border-top:1px solid #d0d0bb;padding:0.3em 0.5em 0.3em 2.3em;}
 div#wrapper div.entry-content .download{background:url(images/file-download.png) no-repeat center left;}
 div#wrapper div.entry-content .html{background:url(images/file-html.png) no-repeat center left;}
