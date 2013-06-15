@@ -34,6 +34,68 @@
             <!--Body content-->
             
         <div class="post">
+            <h2><a href="posts/english-keyboard-while-typing-persian.html">حل مشکلی اساسی با پایتون: انگلیسی بودن کیبورد حین تایپ فارسی</a></h2>
+            <div class="entry-content">
+                <!-- link: -->
+<!-- description: -->
+<!-- tags: گنو/لینوکس,لینوکس,کیبورد,چرا عاشق لینوکس هستم -->
+<!-- date: 2013/06/15 22:38:22 -->
+<!-- title: حل مشکلی اساسی با پایتون: انگلیسی بودن کیبورد حین تایپ فارسی -->
+<!-- slug: english-keyboard-while-typing-persian -->
+<p>خیلی اتفاق افتاده که موقع چت با کسی، اون بخواد فارسی تایپ کنه، ولی کیبوردش انگلیسی باشه و نفهمه و مسیج انگلیسی بیاد. مثلا sghl. خوشبختانه برای خود من همچین مشکلی پیش نمیاد زیاد، چون همیشه چشمام روی اسکرین هست. ولی وقتی کس دیگه‌ای مینویسه، به خصوص موقع چت، زیاده اتفاق میفته. خوب، قرار نیست که هر دفعه صبر کنم اون دوباره بنویسه یا با تبدیل حروف تو ذهنم اون رو رمز گشایی بکنم! پس... ایمکس، بیا بالا ;)</p>
+<p>یه اسکریپت کوچیک پایتون مینویسم که از یه فایل اون حروف عجق وجق انگلیسی رو بگیره:</p>
+<pre class="code python literal-block">
+<span class="c">#! /usr/bin/python2</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">per</span> <span class="o">=</span> <span class="p">[</span><span class="s">"ض"</span><span class="p">,</span> <span class="s">"ص"</span><span class="p">,</span> <span class="s">"ث"</span><span class="p">,</span>  <span class="s">"ق"</span><span class="p">,</span>  <span class="s">"ف"</span><span class="p">,</span>  <span class="s">"غ"</span><span class="p">,</span>  <span class="s">"ع"</span><span class="p">,</span>  <span class="s">"ه"</span><span class="p">,</span>  <span class="s">"خ"</span><span class="p">,</span>  <span class="s">"ح"</span><span class="p">,</span>  <span class="s">"ج"</span><span class="p">,</span>  <span class="s">"چ"</span><span class="p">,</span>  <span class="s">"ش"</span><span class="p">,</span>  <span class="s">"س"</span><span class="p">,</span>  <span class="s">"ی"</span><span class="p">,</span>  <span class="s">"ب"</span><span class="p">,</span>  <span class="s">"ل"</span><span class="p">,</span>  <span class="s">"ا"</span><span class="p">,</span>  <span class="s">"ت"</span><span class="p">,</span>  <span class="s">"ن"</span><span class="p">,</span>  <span class="s">"م"</span><span class="p">,</span>  <span class="s">"ک"</span><span class="p">,</span>  <span class="s">"گ"</span><span class="p">,</span>  <span class="s">"ظ"</span><span class="p">,</span>  <span class="s">"ط"</span><span class="p">,</span>  <span class="s">"ز"</span><span class="p">,</span>  <span class="s">"ر"</span><span class="p">,</span>  <span class="s">"ذ"</span><span class="p">,</span>  <span class="s">"د"</span><span class="p">,</span>  <span class="s">"پ"</span><span class="p">,</span>  <span class="s">"و"</span><span class="p">]</span>
+    <span class="n">eng</span> <span class="o">=</span> <span class="p">[</span><span class="s">"q"</span><span class="p">,</span>  <span class="s">"w"</span><span class="p">,</span>  <span class="s">"e"</span><span class="p">,</span>  <span class="s">"r"</span><span class="p">,</span>  <span class="s">"t"</span><span class="p">,</span>  <span class="s">"y"</span><span class="p">,</span>  <span class="s">"u"</span><span class="p">,</span>  <span class="s">"i"</span><span class="p">,</span>  <span class="s">"o"</span><span class="p">,</span>  <span class="s">"p"</span><span class="p">,</span>  <span class="s">"["</span><span class="p">,</span>  <span class="s">"]"</span><span class="p">,</span>  <span class="s">"a"</span><span class="p">,</span>  <span class="s">"s"</span><span class="p">,</span>  <span class="s">"d"</span><span class="p">,</span>  <span class="s">"f"</span><span class="p">,</span>  <span class="s">"g"</span><span class="p">,</span>  <span class="s">"h"</span><span class="p">,</span>  <span class="s">"j"</span><span class="p">,</span>  <span class="s">"k"</span><span class="p">,</span>  <span class="s">"l"</span><span class="p">,</span>  <span class="s">";"</span><span class="p">,</span>  <span class="s">"'"</span><span class="p">,</span>  <span class="s">"z"</span><span class="p">,</span>  <span class="s">"x"</span><span class="p">,</span>  <span class="s">"c"</span><span class="p">,</span>  <span class="s">"v"</span><span class="p">,</span>  <span class="s">"b"</span><span class="p">,</span>  <span class="s">"n"</span><span class="p">,</span>  <span class="s">"m"</span><span class="p">,</span>  <span class="s">","</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">per</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">eng</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">per</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre>
+<p>چیزی برای توضیح دادن نداره. اول دو تا آرایه از حروف روی کیبورد به دو زبان فارسی و انگلیسی میگیره (که احتمالا راه بهتری هم وجود داره)، بعد فایل رو میخونه، حروف رو جایگزین میکنه و بعد پرینت. ورژن دو بودن پایتون هم به این خاطره که این ورژن پشتیبانی بهتری از UTF-8 و کاراکترهای فارسی داره.</p>
+<p>این اسکریپت کارش رو میکنه، ولی باید هر دفعه بذارمش به یه فایل و بعد بزنم پنجره ترمینال بیاد و کد بزنم و ... . درسته، میشه به جای فایل از STDIN استفاده کنم، ولی فکر بهتری دارم. اسکریپت رو کمی تغییر میدم:</p>
+<pre class="code python literal-block">
+<span class="c">#! /usr/bin/python2</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">commands</span> <span class="kn">as</span> <span class="nn">cm</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">per</span> <span class="o">=</span> <span class="p">[</span><span class="s">"ض"</span><span class="p">,</span> <span class="s">"ص"</span><span class="p">,</span> <span class="s">"ث"</span><span class="p">,</span>  <span class="s">"ق"</span><span class="p">,</span>  <span class="s">"ف"</span><span class="p">,</span>  <span class="s">"غ"</span><span class="p">,</span>  <span class="s">"ع"</span><span class="p">,</span>  <span class="s">"ه"</span><span class="p">,</span>  <span class="s">"خ"</span><span class="p">,</span>  <span class="s">"ح"</span><span class="p">,</span>  <span class="s">"ج"</span><span class="p">,</span>  <span class="s">"چ"</span><span class="p">,</span>  <span class="s">"ش"</span><span class="p">,</span>  <span class="s">"س"</span><span class="p">,</span>  <span class="s">"ی"</span><span class="p">,</span>  <span class="s">"ب"</span><span class="p">,</span>  <span class="s">"ل"</span><span class="p">,</span>  <span class="s">"ا"</span><span class="p">,</span>  <span class="s">"ت"</span><span class="p">,</span>  <span class="s">"ن"</span><span class="p">,</span>  <span class="s">"م"</span><span class="p">,</span>  <span class="s">"ک"</span><span class="p">,</span>  <span class="s">"گ"</span><span class="p">,</span>  <span class="s">"ظ"</span><span class="p">,</span>  <span class="s">"ط"</span><span class="p">,</span>  <span class="s">"ز"</span><span class="p">,</span>  <span class="s">"ر"</span><span class="p">,</span>  <span class="s">"ذ"</span><span class="p">,</span>  <span class="s">"د"</span><span class="p">,</span>  <span class="s">"پ"</span><span class="p">,</span>  <span class="s">"و"</span><span class="p">]</span>
+    <span class="n">eng</span> <span class="o">=</span> <span class="p">[</span><span class="s">"q"</span><span class="p">,</span>  <span class="s">"w"</span><span class="p">,</span>  <span class="s">"e"</span><span class="p">,</span>  <span class="s">"r"</span><span class="p">,</span>  <span class="s">"t"</span><span class="p">,</span>  <span class="s">"y"</span><span class="p">,</span>  <span class="s">"u"</span><span class="p">,</span>  <span class="s">"i"</span><span class="p">,</span>  <span class="s">"o"</span><span class="p">,</span>  <span class="s">"p"</span><span class="p">,</span>  <span class="s">"["</span><span class="p">,</span>  <span class="s">"]"</span><span class="p">,</span>  <span class="s">"a"</span><span class="p">,</span>  <span class="s">"s"</span><span class="p">,</span>  <span class="s">"d"</span><span class="p">,</span>  <span class="s">"f"</span><span class="p">,</span>  <span class="s">"g"</span><span class="p">,</span>  <span class="s">"h"</span><span class="p">,</span>  <span class="s">"j"</span><span class="p">,</span>  <span class="s">"k"</span><span class="p">,</span>  <span class="s">"l"</span><span class="p">,</span>  <span class="s">";"</span><span class="p">,</span>  <span class="s">"'"</span><span class="p">,</span>  <span class="s">"z"</span><span class="p">,</span>  <span class="s">"x"</span><span class="p">,</span>  <span class="s">"c"</span><span class="p">,</span>  <span class="s">"v"</span><span class="p">,</span>  <span class="s">"b"</span><span class="p">,</span>  <span class="s">"n"</span><span class="p">,</span>  <span class="s">"m"</span><span class="p">,</span>  <span class="s">","</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">getoutput</span><span class="p">(</span><span class="s">"xclip -selection clipboard -o"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">per</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">eng</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">per</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">"echo -n </span><span class="se">\"</span><span class="s">"</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s">"</span><span class="se">\"</span><span class="s"> | xclip -selection clipboard"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre>
+<p>دو تا جا عوض شده: اول این که به جای فایل، ورودی رو از کلیپ‌بورد میگیره. و دومی هم این که خروجی رو به کلیپ‌بورد میده!</p>
+<p>الان بهتر شد، و کافیه هر دفعه متن رو کپی و این اسکریپت رو از ترمینال اجرا کنم. ولی یه شرتکات هم میذارم که دیگه سنگ تموم بذارم ‎:D مثلا Ctrl+Alt+C گزینه خوبیه</p>
+<p>البته این آرایه فقط حروف اصلی روی کیبورد رو داره، و مثلا «آ» یا «،» رو نداره و اگه طرف ویندوزی باشه، «و» و «پ» میرن یه جای دیگه. ولی خوب، اونجاهاش رو خودم میفهمم دیگه :)</p>
+            </div>
+            <div class="entry-meta">
+                <span class="meta-sep">|</span>
+                <span class="entry-date">ارسال شده: 2013-06-15 22:38:22</span>
+                <span class="meta-sep">|</span>
+                    ‎<a href="http://straygeek.github.io/posts/english-keyboard-while-typing-persian.html#disqus_thread">نظرات</a>‎
+            </div>
+        </div>
+        <div class="post">
             <h2><a href="posts/nikola.html">مهاجرت به وبلاگ ایستا</a></h2>
             <div class="entry-content">
                 <!-- link: -->
@@ -241,40 +303,6 @@ fi</p>
                 <span class="entry-date">ارسال شده: 2013-03-14 16:46:14</span>
                 <span class="meta-sep">|</span>
                     ‎<a href="http://straygeek.github.io/posts/20130314chr-khtbh-hmymshh-khtb-khwhnd-mnd.html#disqus_thread">نظرات</a>‎
-            </div>
-        </div>
-        <div class="post">
-            <h2><a href="posts/20130310archbwkh-2013-1-wmd.html">آرچ‌بوک ۲۰۱۳.۱ اومد</a></h2>
-            <div class="entry-content">
-                <p></p><p>بعد از گذشت یک سال از انتشار آرچ‌بوک قبلی، که مال موقعی بود که آرچ نصاب گرافیکی داشت، <a title="کتاب آرچ‌بوک ۲۰۱۳.۱ منتشر شد!" href="http://emanlog.com/?p=324" target="_blank">آرچ‌بوک جدید</a> با بازنویسی و زحمات <a title="ایمان‌لاگ" href="http://emanlog.com/" target="_blank">ایمان</a> منتشر شد. این کتاب، در واقع راهنمای شروع توزیع آرچ‌لینوکس هست که هم برای مبتدی‌ها و حتی بعضی وقت‌ها برای حرفه‌ای‌ها مناسبه. به علاوهٔ آموزش نصب آرچ، کلی اطلاعات دیگه هم داده که خیلیاشون ممکنه برای کاربرهای توزیع‌های دیگه هم مناسب باشه.
-</p><p style="text-align:justify;">به نقل از وبلاگ ایمان:</p>
-<blockquote>
-
-<p style="text-align:justify;">این نسخه از کتاب در دو نسخه ارائه می‌شود. هر دو نسخه از نظر محتوا کاملا شبیه به یکدیگر می‌باشند و تنها تفاوت آن‌ها در صفحهٔ سپاس است.</p>
-
-<p style="text-align:justify;">اما صفحهٔ سپاس چیست؟ دوستانی که از طریق لینکی که در ادامه قرار گرفته کتاب را به مبلغ ۳۸۰۰ تومان خریداری کنند نسخهٔ امضا شده که حاوی تشکر بنده به همراه امضاء در انتهای آن است را به منظور قدردانی دریافت خواهند کرد.</p>
-
-</blockquote>
-
-<p style="text-align:justify;">با دادن مبلغ ۳۸۰۰ تومن، از ایمان و کتابش همایت خوبی می‌کنین و انگیزه نسخه بعدی آرچ‌بوک رو بیشتر می‌کنین.</p>
-
-<blockquote>به هر حال حمایت شما از کتاب با خرید نسخهٔ امضا شده ما را در خلق آثاری از این دست در آینده یاری خواهد کرد.
-
-
-
-همچنین شما می‌توانید از طریق صفحهٔ زیر هدایای نقدی خود را برای ما ارسال کنید.
-
-
-
-<a href="http://emanlog.com/?page_id=74">http://emanlog.com/?page_id=74</a></blockquote>
-
-<p>برای خرید کتاب (یا دانلود نسخه رایگانش)، به <a title="کتاب آرچ ۲۰۱۳.۱ منتشر شد!" href="http://emanlog.com/?p=324" target="_blank">وبلاگ ایمان</a> برین. بعد از خرید، کتاب به ایمیل شما ارسال میشه.</p>
-            </div>
-            <div class="entry-meta">
-                <span class="meta-sep">|</span>
-                <span class="entry-date">ارسال شده: 2013-03-10 13:11:18</span>
-                <span class="meta-sep">|</span>
-                    ‎<a href="http://straygeek.github.io/posts/20130310archbwkh-2013-1-wmd.html#disqus_thread">نظرات</a>‎
             </div>
         </div>
     <br>
