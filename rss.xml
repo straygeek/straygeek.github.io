@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>نوشته‌های یک گیک</title><link>http://straygeek.github.io</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Sun, 16 Jun 2013 11:38:38 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>حل مشکلی اساسی با پایتون: انگلیسی بودن کیبورد حین تایپ فارسی</title><link>http://straygeek.github.io/posts/english-keyboard-while-typing-persian.html</link><description>&lt;!-- link: --&gt;
+<rss version="2.0"><channel><title>نوشته‌های یک گیک</title><link>http://straygeek.github.io</link><description>یک وبلاگ عادی از یک لینوکسی عادی</description><lastBuildDate>Sun, 16 Jun 2013 12:45:14 GMT</lastBuildDate><generator>nikola</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>حل مشکلی اساسی به وسیله پایتون: انگلیسی بودن کیبورد حین تایپ فارسی</title><link>http://straygeek.github.io/posts/english-keyboard-while-typing-persian.html</link><description>&lt;!-- link: --&gt;
 &lt;!-- description: --&gt;
 &lt;!-- tags: گنو/لینوکس,لینوکس,کیبورد,چرا عاشق لینوکس هستم --&gt;
 &lt;!-- date: 2013/06/15 22:38:22 --&gt;
-&lt;!-- title: حل مشکلی اساسی با پایتون: انگلیسی بودن کیبورد حین تایپ فارسی --&gt;
+&lt;!-- title: حل مشکلی اساسی به وسیله پایتون: انگلیسی بودن کیبورد حین تایپ فارسی --&gt;
 &lt;!-- slug: english-keyboard-while-typing-persian --&gt;
 &lt;p&gt;خیلی اتفاق افتاده که موقع چت با کسی، اون بخواد فارسی تایپ کنه، ولی کیبوردش انگلیسی باشه و نفهمه و مسیج انگلیسی بیاد. مثلا sghl. خوشبختانه برای خود من همچین مشکلی پیش نمیاد زیاد، چون همیشه چشمام روی اسکرین هست. ولی وقتی کس دیگه‌ای مینویسه، به خصوص موقع چت، زیاده اتفاق میفته. خوب، قرار نیست که هر دفعه صبر کنم اون دوباره بنویسه یا با تبدیل حروف تو ذهنم اون رو رمز گشایی بکنم! پس... ایمکس، بیا بالا ;)&lt;/p&gt;
 &lt;p&gt;یه اسکریپت کوچیک پایتون مینویسم که از یه فایل اون حروف عجق وجق انگلیسی رو بگیره:&lt;/p&gt;
