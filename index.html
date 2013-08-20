@@ -35,6 +35,77 @@
             
         
         <div class="post">
+            <h2><a href="posts/mplayer-control.html">کنترل MPlayer به وسیله کلیدهای لپ‌تاپ</a></h2>
+            <div class="entry-content">
+                <!-- link: -->
+<!-- description: -->
+<!-- tags: لینوکس,mplayer -->
+<!-- date: 2013/08/20 21:51:31 -->
+<!-- title: کنترل MPlayer به وسیله کلیدهای لپ‌تاپ -->
+<!-- slug: mplayer-control -->
+<p>مدتی پیش، میخواستم راهی برای کنترل MPlayer از گوشیم پیدا بکنم. نتونستم با <a class="reference external" href="http://en.wikipedia.org/wiki/Music_Player_Daemon">MPDها</a> کنار بیام و بالاخره، آستین‌ها رو بالا زدم تا خودم کاری بکنم! ولی فعلا درمورد اون نمینویسم. در این بین فهمیدم چطور میشه ام‌پلیر رو از دور (منظور جایی غیر از خود ام‌پلیر) کنترل کرد و به فکرم افتاد از شرتکات‌های کنترل پلیر لپ‌تاپم هم استفاده‌ای بکنم. برای VLC و بقیه پلیرها احتمالا چیز آنچنانی نیست و اگه با MPDها راحت بودم، واسه ام‌پلیر هم میتونستم خیلی آسون‌تر کاری بکنم. ولی فعلا اون‌ها رو میذارم کنار.</p>
+<p>ام‌پلیر میتونه به وسیله <a class="reference external" href="http://en.wikipedia.org/wiki/Named_pipe">فایل‌های پایپ</a> کنترل بشه. من برای فایل‌های پایپم، یه دایرکتوری مخصوص به آدرس ‎/media/fifo دارم. اونجا یه فایل فیفو به اسم mplfifo درست میکنم:</p>
+<pre class="code bash literal-block">
+mkfifo /media/fifo/mplfifo
+</pre>
+<p>الان باید شرتکات‌ها رو روی اوپن‌باکس تنظیم بکنم. احتمالا میدونین که هر کلیدی روی صفحه کلیدتون یه کدی داره. مثلا k همون k هست. ولی بعضی وقت‌ها اینقدر ساده نیست. مثلا کد کپس‌لاک من <cite>ISO_Next_Group</cite> هست! کلیدهای کنترل پلیر هم از این نوع هستن.</p>
+<p>برای پیدا کردن این کدها، یه راه ساده‌ای وجود داره. میتونین از برنامه xev که داخل خود X هست استفاده بکنین. اگه میخواین مستقیم به کد کلید برسین، میتونین از این تکه کد کوچیک استفاده بکنین:</p>
+<pre class="code bash literal-block">
+xev | grep -oP <span class="s2">"keycode \S* \(keysym \S*?, \S*?\)"</span> | cut -d, -f2 | tr -d <span class="se">\)</span> | tr -d <span class="s2">" "</span>
+</pre>
+<p>کلیدهایی که میخواین رو بزنین و بعد پنجره رو ببندین (کل کد رو با Ctrl+C قطع نکنین!). کدهای کلیدهای کنترل پلیر من اینا هستن:</p>
+<pre class="code literal-block">
+XF86AudioPlay
+XF86AudioStop
+XF86AudioNext
+XF86AudioPrev
+</pre>
+<p>حالا شرتکات‌ها رو میسازیم. باید دستور رو به فایل پایپ بفرستیم. مثلا برای توقف و اجرای پلیر، از این خط میشه استفاده کرد:</p>
+<pre class="code bash literal-block">
+<span class="nb">echo </span>pause &gt; /media/fifo/mplfifo
+</pre>
+<p>اگه برای احرای شرتکات‌ها از bash (یا شل دیگه‌ای که از «&lt;» پشتیبانی بکنه) استفاده نشه، مجبوریم خودمون بدیمش به بش:</p>
+<pre class="code bash literal-block">
+bash -c <span class="s1">'echo pause &gt; /media/fifo/mplfifo'</span>
+</pre>
+<p>دستوراتی که من استفاده میکنم، <cite>pause</cite>،‏ <cite>stop</cite>،‏ <cite>pt_step 1</cite> و <cite>pt_step -1</cite> هستن. لیست کامل دستورات رو میتونین از <a class="reference external" href="http://www.mplayerhq.hu/DOCS/tech/slave.txt">اینجا</a> ببینین. برای مثال، شرتکات‌های من توی اوپن‌باکس به این صورت هستن:</p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">"XF86AudioPlay"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"Execute"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;execute&gt;</span>bash -c 'echo pause &gt; /media/fifo/mplfifo'<span class="nt">&lt;/execute&gt;</span>
+  <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+<span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">"XF86AudioStop"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"Execute"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;execute&gt;</span>bash -c 'echo stop &gt; /media/fifo/mplfifo'<span class="nt">&lt;/execute&gt;</span>
+  <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+<span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">"XF86AudioNext"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"Execute"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;execute&gt;</span>bash -c 'echo pt_step 1 &gt; /media/fifo/mplfifo'<span class="nt">&lt;/execute&gt;</span>
+  <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+<span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">"XF86AudioPrev"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"Execute"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;execute&gt;</span>bash -c 'echo pt_step -1 &gt; /media/fifo/mplfifo'<span class="nt">&lt;/execute&gt;</span>
+  <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+</pre>
+<p>خوب، حالا نوبت خود ام‌پلیر هست. من همیشه نمیخوام از این شرتکات‌ها استفاده بکنم. مثلا موقع دیدن فیلم لازمم نمیشه و اگه آهنگی اونجا pause شده باشه، با اون قاطی میشه. پس یه alias جداگانه براش میسازم:</p>
+<pre class="code bash literal-block">
+<span class="nb">alias </span><span class="nv">mpls</span><span class="o">=</span><span class="s1">'mplayer -input file=/media/fifo/mplfifo'</span>
+</pre>
+<p>اینو میذارم توی zshrcم. الان میتونم آهنگ‌ها رو با mpls و فیلم‌ها رو با mplayer ببینم. از همین فایل پایپ برای کنترل ام‌پلیر از یه صفحه وب، که سرورش کامپیوتر خودمه، و البته فقط با شبکه‌ای که لپتاپم وصله میشه دیدش، استفاده میکنم.</p>
+            </div>
+            <div class="entry-meta">
+                <span class="meta-sep">|</span>
+                <span class="entry-date">ارسال شده: ۲۰۱۳-۰۸-۲۰ ۲۱:۵۱:۳۱</span>
+                <span class="meta-sep">|</span>
+                    ‎<a href="http://straygeek.github.io/posts/mplayer-control.html#disqus_thread">دیدگاه‌ها</a>‎
+            </div>
+        </div>
+        
+        <div class="post">
             <h2><a href="posts/english-keyboard-while-typing-persian.html">حل مشکلی اساسی به وسیله پایتون: انگلیسی بودن کیبورد حین تایپ فارسی</a></h2>
             <div class="entry-content">
                 <!-- link: -->
@@ -211,21 +282,6 @@ fi</p>
                 <span class="entry-date">ارسال شده: ۲۰۱۳-۰۵-۲۴ ۰۶:۵۹:۴۳</span>
                 <span class="meta-sep">|</span>
                     ‎<a href="http://straygeek.github.io/posts/20130524yh-gygbzy-khwchwlw-dnlwd-dh-t-fyl-p.html#disqus_thread">دیدگاه‌ها</a>‎
-            </div>
-        </div>
-        
-        <div class="post">
-            <h2><a href="posts/20130523dwrh-jdyd-drsnmh-bry-khwnndhh-w-p.html">دوره جدید درسنامه برای خواننده‌ها و پادکسترها: استودیوی خانگ ی ضبط صدا</a></h2>
-            <div class="entry-content">
-                <p></p><p>افراد زیادی هستن که دوست دارن یه پادکست داشته باشن. ولی بعضی مشکلات دارن. مثلا، میترسن مردم خوششون نیاد یا صداشون ضایع باشه یا میخوان تو دنیای مجازی صداشون پخش نشه. ولی، برای کسایی که اینجور مشکلات رو ندارن، یه مشکل دیگه هم هست: چطور صدا رو با کیفیت خوب و مناسب برای یک پادکست میشه ضبط کرد؟</p>
-<p>امروز <a href=".">درسنامه</a>، دوره جدیدی به اسم «استودیوی خانگی ضبط صدا» راه‌اندازی کرده که به این سوال یه جواب کامل میده. من قرار نیست تو این دوره شرکت بکنم، چون زیاد با ضبط صدا سر و کار ندارم. ولی اگه شما به ضبط صدا علاقه دارین، میتونین <a href="blog/175">تو این دوره درسنامه شرکت بکنین</a>.</p>
-<p></p>
-            </div>
-            <div class="entry-meta">
-                <span class="meta-sep">|</span>
-                <span class="entry-date">ارسال شده: ۲۰۱۳-۰۵-۲۳ ۱۱:۰۵:۲۶</span>
-                <span class="meta-sep">|</span>
-                    ‎<a href="http://straygeek.github.io/posts/20130523dwrh-jdyd-drsnmh-bry-khwnndhh-w-p.html#disqus_thread">دیدگاه‌ها</a>‎
             </div>
         </div>
     <br>
